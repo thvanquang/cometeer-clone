@@ -8,7 +8,7 @@ const Navbar = ({ background }) => {
   return (
     <div className="sticky top-[16px] mt-4">
       <div
-        className={`mx-auto grid w-[97%] grid-cols-[1fr_auto_1fr] items-center justify-between rounded-full bg-[#2c2b2b]  p-4`}
+        className={`mx-auto grid w-[97%] grid-cols-[1fr_auto_1fr] items-center justify-between rounded-full bg-[#2c2b2b] p-4`}
       >
         <button className="ml-2 text-white">{bar}</button>
         <img
