@@ -1,8 +1,8 @@
 import React from "react";
 
-import Bean from "../Assets/triptych-bean.png";
-import Spaceman from "../Assets/triptych-spaceman.png";
-import Cup from "../Assets/triptych-cup.png";
+import Bean from "../Assets/Triptych/triptych-bean.png";
+import Spaceman from "../Assets/Triptych/triptych-spaceman.png";
+import Cup from "../Assets/Triptych/triptych-cup.png";
 
 const TRIPTYCH = [
   {

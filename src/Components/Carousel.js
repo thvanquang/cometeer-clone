@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { stars } from "../Assets/icons/Carousel";
+
 const Slides = [
   {
     quote:
@@ -33,31 +35,49 @@ const Slides = [
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  const prevSlide = () =>
+    setCurrentSlide(currentSlide === 0 ? Slides.length - 1 : currentSlide - 1);
+  const nextSlide = () =>
+    setCurrentSlide(currentSlide === Slides.length - 1 ? 0 : currentSlide + 1);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      prevSlide();
+    }
+    if (event.key === "ArrowRight") {
+      nextSlide();
+    }
+  });
+
   return (
     <div className="relative overflow-hidden">
       <div
-        className="flex  text-[#f3f5e8] transition-transform duration-500 ease-out"
+        className="flex text-[#f3f5e8] transition-transform duration-500 ease-out"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
         {Slides.map((slide) => (
           <div
             key={slide.dateSubcribe}
-            className="min-w-[100%] bg-[#1A1A1A] p-10 text-center"
+            className="min-w-[100%] bg-[#1A1A1A] py-24 text-center"
           >
-            <div>5 stars</div>
-            <p>{slide.quote}</p>
-            <p>{slide.dateSubcribe}</p>
+            <div className="mx-auto max-w-[460px]">
+              <div className="mb-4 flex justify-center">{stars}</div>
+              <p className="mb-4 font-semibold italic">{slide.quote}</p>
+              <p className="mx-auto max-w-[220px] text-center text-xs font-medium uppercase leading-6 tracking-widest">
+                {slide.dateSubcribe}
+              </p>
+            </div>
           </div>
         ))}
       </div>
 
-      <div className="absolute bottom-4 left-0 right-0">
-        <div className="flex items-center justify-center gap-2">
+      <div className="absolute bottom-14 left-0 right-0">
+        <div className="flex items-center justify-center gap-4">
           {Slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrentSlide(i)}
-              className={`h-3 w-3 rounded-full bg-white text-white transition-colors duration-700 ${currentSlide === i ? "bg-red-500" : "bg-opacity-50"}`}
+              className={`h-4 w-4 rounded-full border-2 border-white transition-colors duration-500 ease-out ${currentSlide === i ? "border-none bg-[#f5d577]" : "bg-opacity-50"}`}
             ></button>
           ))}
         </div>

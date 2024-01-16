@@ -1,9 +1,9 @@
 import React from "react";
 
-import BestBean from "../Assets/the-best-beans.png";
-import PerfectlyBrewed from "../Assets/perfectly-brewed.png";
-import FlashFrozen from "../Assets/flash-frozen-for-peak-freshness.png";
-import CafeDrink from "../Assets/cafe-drink-in-sec.png";
+import BestBean from "../Assets/ImageBullets/the-best-beans.png";
+import PerfectlyBrewed from "../Assets/ImageBullets/perfectly-brewed.png";
+import FlashFrozen from "../Assets/ImageBullets/flash-frozen-for-peak-freshness.png";
+import CafeDrink from "../Assets/ImageBullets/cafe-drink-in-sec.png";
 
 const BULLETS = [
   {

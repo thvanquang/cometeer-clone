@@ -1,8 +1,8 @@
 import React from "react";
 
 import { bar, account, cart } from "../Assets/icons/Navbar";
-import Logo from "../Assets/logo.png";
-import LogoWhite from "../Assets/logo-white.png";
+import Logo from "../Assets/Navbar/logo.png";
+import LogoWhite from "../Assets/Navbar/logo-white.png";
 
 const Navbar = ({ background }) => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 
-import Video from "../Assets/video.mp4";
+import Video from "../Assets/Banner/video.mp4";
 
-import { arrow } from "../Assets/icons/Home";
+import { arrow } from "../Assets/icons/Banner";
 
 const Banner = () => {
   return (
