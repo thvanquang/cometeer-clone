@@ -1,9 +1,10 @@
 // import React, { useState } from "react";
-import Banner from "../Components/Banner";
-import Carousel from "../Components/Carousel";
-import ImageBullets from "../Components/ImageBullets";
 import Navbar from "../Components/Navbar";
+import Banner from "../Components/Banner";
 import Triptych from "../Components/Triptych";
+import ImageBullets from "../Components/ImageBullets";
+import Carousel from "../Components/Carousel";
+import Products from "../Components/Products";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Triptych />
       <ImageBullets />
       <Carousel />
+      <Products />
     </div>
   );
 };
