@@ -29,7 +29,7 @@ const TRIPTYCH = [
 
 const Triptych = () => {
   return (
-    <div className="flex max-w-[1320px] flex-nowrap overflow-scroll overflow-y-hidden">
+    <div className="flex max-w-full flex-nowrap overflow-scroll overflow-y-hidden">
       {TRIPTYCH.map((section) => (
         <div
           key={section.altText}

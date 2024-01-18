@@ -6,15 +6,15 @@ import { arrow } from "../Assets/icons/icons";
 
 const Banner = () => {
   return (
-    <div className="relative inline-block h-[125vw] min-h-[450px] w-full lg:h-[100vh]">
-      <div className="-z-50 h-full w-full">
+    <div className=" relative h-[125vw] min-h-[450px] w-[100vw] lg:h-[101vh]">
+      <div className="-z-50 h-full w-full overflow-hidden">
         <video
           playsInline={true}
           autoPlay="autoplay"
           loop="loop"
           muted="muted"
           preload="metadata"
-          className="absolute left-[50%] top-[50%] h-full w-auto min-w-[100vw] translate-x-[-50%] translate-y-[-50%] object-cover"
+          className="absolute left-[50%] top-[50%] inline-block h-full w-auto -translate-x-1/2 -translate-y-1/2 object-cover xl:w-full"
         >
           <source src={Video} type="video/mp4" />
         </video>

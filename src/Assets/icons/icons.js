@@ -51,17 +51,18 @@ export const cart = (
 
 export const arrow = (
   <svg
+    className="h-4 w-4"
+    aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth={1.5}
-    stroke="currentColor"
-    className="h-4 w-4"
+    viewBox="0 0 14 10"
   >
     <path
+      stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+      strokeWidth="2"
+      d="M1 5h12m0 0L9 1m4 4L9 9"
     />
   </svg>
 );
@@ -144,5 +145,22 @@ export const bean = (
         fill="currentColor"
       ></path>
     </g>
+  </svg>
+);
+
+export const check = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    className="h-4 w-4"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="m4.5 12.75 6 6 9-13.5"
+    />
   </svg>
 );
