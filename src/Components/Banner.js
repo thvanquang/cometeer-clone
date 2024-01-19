@@ -7,7 +7,7 @@ import { arrow } from "../Assets/icons/icons";
 const Banner = () => {
   return (
     <div className=" relative h-[125vw] min-h-[450px] w-[100vw] lg:h-[101vh]">
-      <div className="-z-50 h-full w-full overflow-hidden">
+      <div className="-z-50 h-full w-[97%] overflow-hidden">
         <video
           playsInline={true}
           autoPlay="autoplay"
@@ -30,8 +30,9 @@ const Banner = () => {
           </p>
         </div>
 
-        <button className="flex items-center gap-4 rounded-full bg-[#f5d577] px-12 py-3 font-semibold tracking-widest text-[#2c2b2b]">
-          TRY COMETEER{arrow}
+        <button className="group flex items-center gap-4 rounded-full bg-[#f5d577] px-12 py-3 font-semibold tracking-widest text-[#2c2b2b] hover:bg-[#ddbf6d]">
+          TRY COMETEER{" "}
+          <i className="group-hover:animate-transition-right">{arrow}</i>
         </button>
       </div>
     </div>
