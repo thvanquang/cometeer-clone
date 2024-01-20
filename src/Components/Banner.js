@@ -2,7 +2,7 @@ import React from "react";
 
 import Video from "../Assets/Banner/video.mp4";
 
-import { arrow } from "../Assets/icons/icons";
+import ButtonArrow from "../Utilities/ButtonArrow";
 
 const Banner = () => {
   return (
@@ -20,8 +20,8 @@ const Banner = () => {
         </video>
       </div>
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-8 py-10 text-[#f3f5e8]">
-        <div className="mb-10">
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-8 py-10 ">
+        <div className="mb-10 text-[#f3f5e8]">
           <h1 className="mb-2 text-center text-3xl font-black">
             Earth's Best Coffee Comes from the Freezer
           </h1>
@@ -30,10 +30,11 @@ const Banner = () => {
           </p>
         </div>
 
-        <button className="group flex items-center gap-4 rounded-full bg-[#f5d577] px-12 py-3 font-semibold tracking-widest text-[#2c2b2b] hover:bg-[#ddbf6d]">
-          TRY COMETEER{" "}
-          <i className="group-hover:animate-transition-right">{arrow}</i>
-        </button>
+        <ButtonArrow buttonStyle={"px-12 py-3 bg-[#f5d577] hover:bg-[#ddbf6d]"}>
+          <p className="font-semibold uppercase tracking-widest">
+            Try Cometeer
+          </p>
+        </ButtonArrow>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import Triptych from "../Components/Triptych";
 import ImageBullets from "../Components/ImageBullets";
 import Carousel from "../Components/Carousel";
 import Products from "../Components/Products";
+import RoasterPartners from "../Components/RoasterPartners";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <ImageBullets />
       <Carousel />
       <Products />
+      <RoasterPartners />
     </div>
   );
 };
