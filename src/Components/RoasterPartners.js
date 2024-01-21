@@ -19,19 +19,19 @@ const Roasters = [
   {
     name: "counter-culture-box",
     logo: CounterCulture,
-    bgColor: "bg-[#595e91]",
+    bgColor: "bg-[#6067ae]",
   },
-  { name: "bird-rock-box", logo: BirdRock, bgColor: "bg-[#30585f]" },
-  { name: "george-howell-box", logo: GeorgeHowell, bgColor: "bg-[#27323c]" },
+  { name: "bird-rock-box", logo: BirdRock, bgColor: "bg-[#2b6f79]" },
+  { name: "george-howell-box", logo: GeorgeHowell, bgColor: "bg-[#233747]" },
   { name: "equator-box", logo: Equator, bgColor: "bg-[#b94a48]" },
-  { name: "birch-box", logo: Birch, bgColor: "bg-[#353432]" },
-  { name: "joe-coffee-box", logo: JoeCoffee, bgColor: "bg-[#226a7d]" },
-  { name: "red-bay-box", logo: RedBay, bgColor: "bg-[#262b31]" },
-  { name: "go-get-em-tiger-box", logo: GGet, bgColor: "bg-[#8a537c]" },
+  { name: "birch-box", logo: Birch, bgColor: "bg-[#3b3836]" },
+  { name: "joe-coffee-box", logo: JoeCoffee, bgColor: "bg-[#1189a9]" },
+  { name: "red-bay-box", logo: RedBay, bgColor: "bg-[#262c33]" },
+  { name: "go-get-em-tiger-box", logo: GGet, bgColor: "bg-[#bd62a6]" },
   { name: "klatch-box", logo: Klatch, bgColor: "bg-[#cb8439]" },
   { name: "onyx-box", logo: Onyx, bgColor: "bg-[#999366]" },
-  { name: "square-mile-box", logo: SquareMile, bgColor: "bg-[#112e45]" },
-  { name: "black-white-box", logo: BlackWhite, bgColor: "bg-[#0d0c0c]" },
+  { name: "square-mile-box", logo: SquareMile, bgColor: "bg-[#003258]" },
+  { name: "black-white-box", logo: BlackWhite, bgColor: "bg-[#000]" },
   { name: "intelligentsia-box", logo: "", bgColor: "bg-[#ca2a22]" },
 ];
 
@@ -48,11 +48,11 @@ const RoasterPartners = () => {
         </p>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-2 p-4">
+      <div className="flex flex-wrap items-start justify-center gap-2 p-4">
         {Roasters.map((roaster) => (
           <div
             key={roaster.name}
-            className={`flex items-center justify-center rounded-lg p-4 md:aspect-square ${roaster.bgColor}`}
+            className={`flex max-w-[166px] items-center justify-center rounded-lg transition-opacity duration-300 ease-in-out hover:opacity-70 md:aspect-square md:p-8 ${roaster.bgColor}`}
           >
             <img src={roaster.logo} className="w-fit" />
           </div>
