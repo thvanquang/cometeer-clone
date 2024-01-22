@@ -1,0 +1,17 @@
+.footer {
+  background-color: #2b2c2c;
+  padding: 2rem;
+  background-image: repeating-linear-gradient(
+      90deg,
+      #413f3d 0,
+      #413f3d 1px,
+      transparent 1px,
+      transparent 4rem
+    ),
+    repeating-linear-gradient(
+      #413f3d 0,
+      #413f3d 1px,
+      transparent 1px,
+      transparent 4rem
+    );
+}

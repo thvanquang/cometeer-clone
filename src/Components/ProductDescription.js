@@ -27,7 +27,7 @@ const Descriptions = [
 
 const ProductDescription = () => {
   return (
-    <div className="mb-10 px-16 py-14">
+    <div className="mb-12 px-16 py-14">
       <h1 className="mb-12 text-center text-[52px]">
         Unrivaled flavor, sustainably
       </h1>

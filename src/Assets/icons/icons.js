@@ -73,7 +73,7 @@ export const stars = (
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="h-5 w-5 text-[#f5d577]"
+      className="h-5 w-5 text-[#1a1a1a]"
     >
       <path
         fillRule="evenodd"
@@ -85,7 +85,7 @@ export const stars = (
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="h-5 w-5 text-[#f5d577]"
+      className="h-5 w-5 text-[#1a1a1a]"
     >
       <path
         fillRule="evenodd"
@@ -97,7 +97,7 @@ export const stars = (
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="h-5 w-5 text-[#f5d577]"
+      className="h-5 w-5 text-[#1a1a1a]"
     >
       <path
         fillRule="evenodd"
@@ -109,7 +109,7 @@ export const stars = (
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="h-5 w-5 text-[#f5d577]"
+      className="h-5 w-5 text-[#1a1a1a]"
     >
       <path
         fillRule="evenodd"
@@ -121,7 +121,7 @@ export const stars = (
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="h-5 w-5 text-[#f5d577]"
+      className="h-5 w-5 text-[#1a1a1a]"
     >
       <path
         fillRule="evenodd"
@@ -161,6 +161,82 @@ export const check = (
       strokeLinecap="round"
       strokeLinejoin="round"
       d="m4.5 12.75 6 6 9-13.5"
+    />
+  </svg>
+);
+
+export const facebookIcon = (
+  <svg
+    className="h-5 w-5"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 8 19"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+      clip-rule="evenodd"
+    />
+  </svg>
+);
+
+export const twitterIcon = (
+  <svg
+    className="h-5 w-5"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 20 20"
+  >
+    <path
+      fill="currentColor"
+      d="M12.186 8.672 18.743.947h-2.927l-5.005 5.9-4.44-5.9H0l7.434 9.876-6.986 8.23h2.927l5.434-6.4 4.82 6.4H20L12.186 8.672Zm-2.267 2.671L8.544 9.515 3.2 2.42h2.2l4.312 5.719 1.375 1.828 5.731 7.613h-2.2l-4.699-6.237Z"
+    />
+  </svg>
+);
+
+export const instagramIcon = (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 48 48"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M34 6H14C9.58172 6 6 9.58172 6 14V34C6 38.4183 9.58172 42 14 42H34C38.4183 42 42 38.4183 42 34V14C42 9.58172 38.4183 6 34 6Z"
+      fill="none"
+      stroke="#fff"
+      stroke-width="4"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M24 32C28.4183 32 32 28.4183 32 24C32 19.5817 28.4183 16 24 16C19.5817 16 16 19.5817 16 24C16 28.4183 19.5817 32 24 32Z"
+      fill="none"
+      stroke="#fff"
+      stroke-width="4"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M35 15C36.1046 15 37 14.1046 37 13C37 11.8954 36.1046 11 35 11C33.8954 11 33 11.8954 33 13C33 14.1046 33.8954 15 35 15Z"
+      fill="#fff"
+    />
+  </svg>
+);
+
+export const youtubeIcon = (
+  <svg
+    className="h-6 w-6"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 20 14"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M19.7 3.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.84c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.84A4.225 4.225 0 0 0 .3 3.038a30.148 30.148 0 0 0-.2 3.206v1.5c.01 1.071.076 2.142.2 3.206.094.712.363 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.15 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965c.124-1.064.19-2.135.2-3.206V6.243a30.672 30.672 0 0 0-.202-3.206ZM8.008 9.59V3.97l5.4 2.819-5.4 2.8Z"
+      clip-rule="evenodd"
     />
   </svg>
 );

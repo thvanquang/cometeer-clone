@@ -22,10 +22,10 @@ const Header = () => {
 
       <div className="absolute inset-0 flex flex-col items-center justify-center px-8 py-10 ">
         <div className="mb-10 text-[#f3f5e8]">
-          <h1 className="mb-2 text-center text-3xl font-black">
+          <h1 className="mb-2 text-center text-4xl font-black tracking-[-0.02rem]">
             Impossibly convenient. Incredibly delicious.
           </h1>
-          <p className="text-center">
+          <p className="text-center text-lg">
             Your favorite specialty coffee drinks. Ready in seconds—with
             unrivaled flavor.
           </p>

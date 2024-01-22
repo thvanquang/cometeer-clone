@@ -32,7 +32,7 @@ const Slides = [
   },
 ];
 
-const Carousel = () => {
+const QuoteCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const prevSlide = () =>
@@ -50,20 +50,21 @@ const Carousel = () => {
   });
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden bg-[#d8dacf] p-12 pb-24">
+      <h1 className="mb-12 text-center text-[40px]">
+        Thousands of 5 Star Reviews
+      </h1>
+
       <div
-        className="flex text-[#f3f5e8] transition-transform duration-500 ease-out"
+        className="flex text-[#1a1a1a] transition-transform duration-500 ease-out"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
         {Slides.map((slide) => (
-          <div
-            key={slide.dateSubcribe}
-            className="min-w-[100%] bg-[#1A1A1A] py-24 text-center"
-          >
-            <div className="mx-auto max-w-[460px]">
-              <div className="mb-4 flex justify-center">{stars}</div>
+          <div key={slide.dateSubcribe} className="mb-12 min-w-[100%]">
+            <div className="mx-auto max-w-[460px] rounded-lg bg-[#f3f5e8] p-8">
+              <div className="mb-4">{stars}</div>
               <p className="mb-4 font-semibold italic">{slide.quote}</p>
-              <p className="mx-auto max-w-[220px] text-center text-xs font-medium uppercase leading-6 tracking-widest">
+              <p className="max-w-[220px] text-xs font-medium uppercase leading-6 tracking-widest">
                 {slide.dateSubcribe}
               </p>
             </div>
@@ -77,7 +78,7 @@ const Carousel = () => {
             <button
               key={i}
               onClick={() => setCurrentSlide(i)}
-              className={`h-4 w-4 rounded-full border-2 border-white transition-colors duration-500 ease-out ${currentSlide === i ? "border-none bg-[#f5d577]" : "bg-opacity-50"}`}
+              className={`h-4 w-4 rounded-full border-2 border-[#1a1a1a] transition-colors duration-200 ease-out ${currentSlide === i ? "bg-[#1a1a1a]" : "bg-opacity-50"}`}
             ></button>
           ))}
         </div>
@@ -86,4 +87,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default QuoteCarousel;

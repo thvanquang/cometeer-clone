@@ -180,7 +180,7 @@ const Products = () => {
                     buttonStyle={`bg-[#f5d577] px-4 py-3 hover:bg-[#ddbf6d] h-full w-full`}
                   >
                     <p className="mr-3 text-sm font-semibold uppercase">
-                      Subscribe & save
+                      Membership
                     </p>
                     <div className="flex items-center gap-1 text-sm font-semibold">
                       <span

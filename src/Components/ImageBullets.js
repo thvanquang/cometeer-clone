@@ -1,28 +1,30 @@
 import React from "react";
 
+import ButtonArrow from "../Utilities/ButtonArrow";
+
 import BestBean from "../Assets/ImageBullets/the-best-beans.png";
 import PerfectlyBrewed from "../Assets/ImageBullets/perfectly-brewed.png";
-import FlashFrozen from "../Assets/ImageBullets/flash-frozen-for-peak-freshness.png";
+import Delivered from "../Assets/ImageBullets/delivered.png";
 import CafeDrink from "../Assets/ImageBullets/cafe-drink-in-sec.png";
 
 const BULLETS = [
   {
     title: "The Best Beans, Period",
     content:
-      "We partner with the very best independent roasters across the USA to source the highest quality coffee",
+      "The highest quality beans from roasters like Intelligentsia, Counter Culture, Equator and more.",
     image: BestBean,
   },
   {
-    title: "Perfectly Brewed",
+    title: "The world's most advanced brewing",
     content:
-      "Our innovative brew technique extracts more flavor and aroma than previously possible",
+      "Created by an MIT engineer to extract more flavor and aroma than previously possible.",
     image: PerfectlyBrewed,
   },
   {
-    title: "Flash-Frozen for Peak Freshness",
+    title: "Delivered to yourkitchen hyper-fresh",
     content:
-      "A liquid nitrogen shower preserves incredible flavor and locks in freshness you can taste",
-    image: FlashFrozen,
+      "Liquid nitrogen locks in the aroma—you'll love tasting all the flavor notes.",
+    image: Delivered,
   },
   {
     title: "Make any café drink in seconds",
@@ -35,17 +37,26 @@ const BULLETS = [
 const ImageBullets = () => {
   return (
     <div className="px-12 py-16">
-      <ul className="flex max-w-full flex-col gap-6 sm:grid sm:max-w-full sm:grid-cols-2 lg:grid-cols-4">
+      <h1 className="mb-8 text-center text-[40px]">
+        The Culmination of 700 Years of Coffee Craft & Science
+      </h1>
+      <ul className="grid max-w-full grid-cols-1 gap-6  md:max-w-full md:grid-cols-2 lg:grid-cols-4">
         {BULLETS.map((bullet) => (
-          <li key={bullet.title} className="flex flex-col items-center">
-            <img src={bullet.image} alt={bullet.title} />
-            <h4 className="my-6 text-center text-xl font-bold">
-              {bullet.title}
-            </h4>
-            <p className="text-center">{bullet.content}</p>
+          <li key={bullet.title} className="flex flex-col ">
+            <img src={bullet.image} alt={bullet.title} className="rounded-lg" />
+            <h4 className="my-6 text-xl font-bold">{bullet.title}</h4>
+            <p className="">{bullet.content}</p>
           </li>
         ))}
       </ul>
+
+      <div className="mt-14 flex w-full justify-center">
+        <ButtonArrow buttonStyle={"px-12 py-3 bg-[#f5d577] hover:bg-[#ddbf6d]"}>
+          <p className="font-semibold uppercase tracking-widest">
+            Try Cometeer
+          </p>
+        </ButtonArrow>
+      </div>
     </div>
   );
 };

@@ -58,7 +58,7 @@ const CometeerPeople = () => {
           {People.map((people) => (
             <div
               key={people.name}
-              className="p-4 lg:w-full [@media(max-width:1024px)]:min-w-full 
+              className="lg:w-full [@media(max-width:1024px)]:min-w-full 
              "
             >
               <div className="mx-auto max-w-[460px] p-4">
