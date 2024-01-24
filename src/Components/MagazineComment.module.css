@@ -1,0 +1,27 @@
+.carousel {
+  overflow: hidden;
+  position: relative;
+
+  padding: 3rem 0 4rem 0;
+
+  background-color: #f7eabc;
+  background-image: repeating-linear-gradient(
+      90deg,
+      #d9cca3 0,
+      #d9cca3 1px,
+      transparent 1px,
+      transparent 6rem
+    ),
+    repeating-linear-gradient(
+      #d9cca3 0,
+      #d9cca3 1px,
+      transparent 1px,
+      transparent 4rem
+    );
+}
+
+@media (min-width: 1024px) {
+  .carousel {
+    padding: 3rem 0;
+  }
+}

@@ -10,6 +10,8 @@ import ProductDescription from "../Components/ProductDescription";
 import CometeerPeople from "../Components/CometeerPeople";
 import Banner from "../Components/Banner";
 import Footer from "../Components/Footer";
+import AwardCarousel from "../Components/AwardCarousel";
+import MagazineComment from "../Components/MagazineComment";
 
 const Home = () => {
   return (
@@ -19,6 +21,8 @@ const Home = () => {
       {/* <Triptych /> */}
       <ImageBullets />
       <QuoteCarousel />
+      <AwardCarousel />
+      <MagazineComment />
       <Products />
       <RoasterPartners />
       <ProductDescription />
