@@ -46,10 +46,6 @@ const Products = () => {
 
   const boxSelected = Boxs.find((box) => box.title === boxSelector);
 
-  const screenSize = window.innerWidth;
-
-  console.log(screenSize);
-
   return (
     <div className="mx-auto max-w-[1320px] gap-4 p-6 ">
       <div className="min-w-[50%] justify-center gap-4 md:grid md:grid-cols-2">

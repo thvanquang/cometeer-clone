@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Wirecutter from "../Assets/MagazineComment/Wirecutter.png";
 import BuzzFeed from "../Assets/MagazineComment/BuzzFeed.png";
@@ -28,6 +28,16 @@ const Comments = [
 const MagazineComment = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setCurrentSlide(0);
+    });
+
+    return window.removeEventListener("resize", () => {
+      setCurrentSlide(0);
+    });
+  }, []);
+
   return (
     <div className={classes.carousel}>
       <div
@@ -35,7 +45,7 @@ const MagazineComment = () => {
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
         {Comments.map((cmt) => (
-          <div key={cmt.name} className=" min-w-full lg:min-w-[460px]">
+          <div key={cmt.name} className=" min-w-full xl:min-w-[460px]">
             <div className="mx-auto flex max-w-[460px] flex-col items-center justify-center gap-4 p-4">
               <p className="text-center text-[32px] font-bold italic leading-10">
                 {cmt.comment}
@@ -46,7 +56,7 @@ const MagazineComment = () => {
         ))}
       </div>
 
-      <div className="absolute bottom-10 left-0 right-0 lg:hidden">
+      <div className="absolute bottom-10 left-0 right-0 xl:hidden">
         <div className="flex items-center justify-center gap-4">
           {Comments.map((_, i) => (
             <button
