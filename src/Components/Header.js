@@ -6,7 +6,7 @@ import ButtonArrow from "../Utilities/ButtonArrow";
 
 const Header = () => {
   return (
-    <div className=" relative h-[100vw] min-h-[450px] w-[98.8vw] lg:h-[101vh]">
+    <div className=" relative h-[101vw] min-h-[450px] w-[98.8vw] lg:h-[101vh]">
       <div className="-z-50 h-full w-[97%] overflow-hidden">
         <video
           playsInline={true}
