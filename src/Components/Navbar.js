@@ -4,56 +4,8 @@ import { bar, account, cart, xMark, chevronDown } from "../Assets/icons/icons";
 
 import Logo from "../Assets/Navbar/logo.png";
 import LogoWhite from "../Assets/Navbar/logo-white.png";
-
-import CuratedBox from "../Assets/Navbar/coffee-curatedbox.png";
-import HalfnDecafBox from "../Assets/Navbar/coffee-halfndecafbox.png";
-import RoasterBox from "../Assets/Navbar/coffee-roasterbox.png";
-import OfficeBox from "../Assets/Navbar/office.png";
-import Gift from "../Assets/Navbar/gift.png";
-import Accessories from "../Assets/Navbar/accessories.png";
-
-const MenuMobile = [
-  {
-    section: "Coffee",
-    items: [
-      {
-        title: "Curated Box",
-        content: "The best variety of our curated coffees. Try them all!",
-        image: CuratedBox,
-      },
-      {
-        title: "Half Caff & Decaf Box",
-        content: "Want less caffeine and more coffee? This box is for you.",
-        image: HalfnDecafBox,
-      },
-      {
-        title: "Roaster Boxes",
-        content: "Love a specific Roaster? Shop all here!",
-        image: RoasterBox,
-      },
-    ],
-  },
-  {
-    section: "Office, Gifts & Accessories",
-    items: [
-      {
-        title: "Office Box",
-        content: "Experience the ultimate office coffee service with Cometeer.",
-        image: OfficeBox,
-      },
-      {
-        title: "Give a Gift",
-        content: "Make any coffee lover melt with the gift of Cometeer.",
-        image: Gift,
-      },
-      {
-        title: "Accessories",
-        content: "Elevate Your Coffee Experience",
-        image: Accessories,
-      },
-    ],
-  },
-];
+import MobileMenuNavbar from "./MobileMenuNavbar";
+import Dropdown from "./Dropdown";
 
 const Navbar = () => {
   //// Initialize States
@@ -61,13 +13,20 @@ const Navbar = () => {
   const [isTop, setIsTop] = useState(true);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [prevScrollPosition, setPrevScrollPosition] = useState(window.scrollY);
-
   // Menu Opening
   const [menuOpening, setMenuOpening] = useState(false);
+  // Dropdown
+  const [tryCometeerShowing, setTryCometeerShowing] = useState(false);
+  const [learnShowing, setLearnShowing] = useState(false);
 
   //// Handlers
   // Scrolling
   const handleScroll = useCallback(() => {
+    // if dropdown is showing, we dont want hide Navbar when scrolling
+    if (tryCometeerShowing || learnShowing) {
+      setIsScrollingUp(true);
+      return;
+    }
     // if menu is opening, we dont want hide Navbar when scrolling
     if (menuOpening) {
       setIsScrollingUp(true);
@@ -89,7 +48,7 @@ const Navbar = () => {
     }
 
     setPrevScrollPosition(currentScrollPosition);
-  }, [prevScrollPosition, menuOpening]);
+  }, [prevScrollPosition, menuOpening, learnShowing, tryCometeerShowing]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -105,28 +64,50 @@ const Navbar = () => {
     setIsScrollingUp(true);
   };
   return (
-    <div className="">
+    <div className="relative">
       <div
         className={`easy-out fixed left-[50%] z-50 w-[97%] translate-x-[-50%] transition-transform duration-500 ${isTop || isScrollingUp ? "top-[1rem]" : "translate-y-[-100px]"} `}
       >
+        {/* 110px is navbar height; study how to put it in var  */}
         <div
-          className={`${menuOpening && "transition-color duration-500 ease-in-out before:absolute before:-left-5 before:-top-5 before:-z-10 before:h-[110px] before:w-[1400px] before:bg-white"}`}
+          className={`${menuOpening && "transition-color  duration-500 ease-in-out before:absolute before:-left-5 before:-top-5 before:-z-10 before:h-[110px] before:w-[1400px] before:bg-white"}`}
         ></div>
         <div
           className={`mx-auto grid min-w-full grid-cols-[1fr_auto_1fr] items-center justify-between rounded-full p-4 transition-colors duration-500 ease-in-out ${isTop ? "bg-transparent" : "bg-[#2c2b2b]"}  ${isTop && menuOpening && "bg-white"}`}
         >
           <div>
-            <div className="ml-1 hidden items-center gap-6 text-white lg:flex">
+            {/* Larger than Mobile screen */}
+            <div className="ml-1 hidden items-center text-white lg:flex lg:gap-8">
               <button
-                className="flex items-center justify-center gap-2 rounded-full border-[1px] bg-[white] px-4 py-1 text-xl font-semibold text-[#2c2b2b]
+                onMouseEnter={() => setTryCometeerShowing(true)}
+                onMouseLeave={() => setTryCometeerShowing(false)}
+                className="z-20 flex items-center gap-2 rounded-full border-[1px] bg-[white] px-6 py-[2px] text-[#2c2b2b]
               hover:border-white hover:bg-[#2c2b2b] hover:text-white"
               >
-                Try Cometeer <i>{chevronDown}</i>
+                {tryCometeerShowing && (
+                  <div className="fixed left-0 right-0 top-[20px] z-10 h-[80px] bg-transparent"></div>
+                )}
+                <p className="text-lg font-semibold">Try Cometeer</p>
+                <i className={`${tryCometeerShowing ? "rotate-180" : ""}`}>
+                  {chevronDown}
+                </i>
               </button>
-              <button className="flex items-center gap-2 rounded-full border-[1px] px-4 py-1 text-xl font-semibold hover:border-white">
-                Learn <i>{chevronDown}</i>
+
+              <button
+                onMouseEnter={() => setLearnShowing(true)}
+                onMouseLeave={() => setLearnShowing(false)}
+                className="z-20 flex items-center gap-2 rounded-full px-6 py-[2px] hover:border-[1px] hover:border-white hover:bg-[#2c2b2b]"
+              >
+                {learnShowing && (
+                  <div className="fixed left-0 right-0 top-[20px] z-10 h-[80px] bg-transparent"></div>
+                )}
+                <p className="text-lg font-semibold"> Learn</p>
+                <i className={`${learnShowing ? "rotate-180" : ""}`}>
+                  {chevronDown}
+                </i>
               </button>
             </div>
+            {/* Mobile screen */}
             <button
               onClick={menuIconClickHandler}
               className={`ml-2 lg:hidden ${menuOpening && "cursor-default"} ${!isTop && menuOpening ? "text-[#2c2b2b]" : "text-white"}`}
@@ -134,6 +115,7 @@ const Navbar = () => {
               {bar}
             </button>
           </div>
+
           <img
             src={isTop && menuOpening ? Logo : LogoWhite}
             alt="logo"
@@ -141,17 +123,21 @@ const Navbar = () => {
             height="40"
             className="scale-75 justify-self-center sm:scale-100"
           />
-          <div className="content-center justify-self-end">
+
+          <div className="content-center justify-self-end ">
             {!menuOpening && (
-              <>
-                <button className="mr-2 text-white sm:mr-4">{account}</button>
-                <button className="mr-2 text-white">{cart}</button>
-              </>
+              <div className="flex gap-6 text-white">
+                <button className="hidden font-semibold lg:block">
+                  Give a Gift
+                </button>
+                <button className="sm:mr-4">{account}</button>
+                <button className="mr-4">{cart}</button>
+              </div>
             )}
             {menuOpening && (
               <button
                 onClick={menuIconClickHandler}
-                className={`mr-4 lg:hidden ${!isTop && "text-white"}`}
+                className={`mr-4 ${!isTop && "text-white"}`}
               >
                 {xMark}
               </button>
@@ -160,51 +146,16 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Dropdown for larger screen */}
+      <Dropdown
+        tryCometeerShowing={tryCometeerShowing}
+        setTryCometeerShowing={setTryCometeerShowing}
+        learnShowing={learnShowing}
+        setLearnShowing={setLearnShowing}
+      />
+
       {/* Menu Navbar Mobile */}
-
-      <div
-        className={`fixed top-[100px] z-20 h-full min-h-full w-full overflow-y-auto bg-white transition-transform duration-500 ease-in-out  ${menuOpening ? "translate-x-0" : "-translate-x-full"}`}
-      >
-        {MenuMobile.map((section) => (
-          <div key={section.section} className="p-4">
-            <h3 className="mb-4 text-xl">{section.section}</h3>
-            <ul>
-              {section.items.map((item) => (
-                <li
-                  key={item.title}
-                  className="flex items-center gap-4 rounded-lg border-[1px] border-[#c1bdb0] bg-[#e3dcc2] p-4 hover:border-2 hover:border-[#1a1a1a]"
-                >
-                  <div className="flex aspect-square w-[100px] items-center">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-[100px]"
-                    />
-                  </div>
-                  <div>
-                    <h1 className="mb-3 text-2xl font-bold">{item.title}</h1>
-                    <p>{item.content}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-
-        <div className="ml-4 mt-4 space-y-6 text-xl font-semibold">
-          <h2>Our Story</h2>
-          <h2>How it Works</h2>
-          <h2>Sustainability</h2>
-          <h2>Roaster</h2>
-        </div>
-
-        <div className="ml-4 mt-8 space-y-4">
-          <p>Store Locator</p>
-          <p>Careers</p>
-          <p>Referral Program</p>
-          <p>Contact Us</p>
-        </div>
-      </div>
+      <MobileMenuNavbar menuOpening={menuOpening} />
     </div>
   );
 };
