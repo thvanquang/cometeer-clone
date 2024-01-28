@@ -54,7 +54,7 @@ const RoasterPartners = () => {
             key={roaster.name}
             className={`flex max-w-[166px] items-center justify-center rounded-lg transition-opacity duration-300 ease-in-out hover:opacity-70 md:aspect-square md:p-8 ${roaster.bgColor}`}
           >
-            <img src={roaster.logo} className="w-fit" />
+            <img src={roaster.logo} alt={roaster.name} className="w-fit" />
           </div>
         ))}
       </div>

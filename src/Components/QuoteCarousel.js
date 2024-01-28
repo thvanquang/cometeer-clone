@@ -105,7 +105,7 @@ const QuoteCarousel = () => {
   });
 
   return (
-    <div className="relative overflow-hidden bg-[#d8dacf] p-12 pb-24">
+    <div className="relative overflow-hidden bg-[#d8dacf] pb-24 pt-12">
       <h1 className="mb-12 text-center text-[40px]">
         Thousands of 5 Star Reviews
       </h1>

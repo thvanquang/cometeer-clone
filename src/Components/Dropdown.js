@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import CuratedBox from "../Assets/Navbar/coffee-curatedbox.png";
 import HalfnDecafBox from "../Assets/Navbar/coffee-halfndecafbox.png";
@@ -21,16 +22,19 @@ const TryCometeerDropdown = [
         title: "Curated Box",
         content: "The best variety of our curated coffees. Try them all!",
         image: CuratedBox,
+        urlAddress: "mixed-roast-box",
       },
       {
         title: "Half Caff & Decaf Box",
         content: "Want less caffeine and more coffee? This box is for you.",
         image: HalfnDecafBox,
+        urlAddress: "half-caff-box",
       },
       {
         title: "Roaster Boxes",
         content: "Love a specific Roaster? Shop all here!",
         image: RoasterBox,
+        urlAddress: "intelligentsia-box",
       },
     ],
   },
@@ -42,6 +46,7 @@ const TryCometeerDropdown = [
         title: "Office Box",
         content: "Experience the ultimate office coffee service with Cometeer.",
         image: OfficeBox,
+        urlAddress: "office-box-1",
       },
     ],
   },
@@ -53,11 +58,13 @@ const TryCometeerDropdown = [
         title: "Give a Gift",
         content: "Make any coffee lover melt with the gift of Cometeer.",
         image: Gift,
+        urlAddress: "gift-card",
       },
       {
         title: "Accessories",
         content: "Elevate Your Coffee Experience",
         image: Accessories,
+        urlAddress: "/collection/accessories",
       },
     ],
   },
@@ -102,6 +109,7 @@ const Dropdown = ({
 
   return (
     <div>
+      {/* Try Cometeer Dropdown */}
       <div
         onMouseEnter={() => setTryCometeerShowing(true)}
         onMouseLeave={() => setTryCometeerShowing(false)}
@@ -111,6 +119,7 @@ const Dropdown = ({
           <div className="flex flex-col items-start gap-4 p-6 text-xl">
             {TryCometeerDropdown.map((section) => (
               <button
+                key={section.id}
                 onMouseEnter={() => {
                   mouseEnterHandler(section.id);
                 }}
@@ -124,11 +133,17 @@ const Dropdown = ({
           <div className="flex w-[65vw] justify-start">
             {TryCometeerDropdown.map((section) => (
               <ul
+                key={section.id}
                 className={` flex-wrap justify-start gap-4 ${sectionSelected === section.id ? "flex" : "hidden"}`}
               >
                 {section.items.map((item) => (
-                  <li
+                  <Link
                     key={item.title}
+                    to={
+                      item.title === "Accessories"
+                        ? item.urlAddress
+                        : `/products/${item.urlAddress}`
+                    }
                     className="flex h-[140px] w-[410px] items-center gap-4 rounded-lg border-[1px] border-[#c1bdb0] bg-[#e3dcc2] p-4 hover:border-2 hover:border-[#1a1a1a]"
                   >
                     <div className="flex aspect-square w-[100px] items-center">
@@ -142,7 +157,7 @@ const Dropdown = ({
                       <h1 className="mb-3 text-2xl font-bold">{item.title}</h1>
                       <p>{item.content}</p>
                     </div>
-                  </li>
+                  </Link>
                 ))}
               </ul>
             ))}
@@ -154,11 +169,14 @@ const Dropdown = ({
       <div
         onMouseEnter={() => setLearnShowing(true)}
         onMouseLeave={() => setLearnShowing(false)}
-        className={`fixed left-[50%] top-[100px] z-20 w-[92vw] -translate-x-[50%] rounded-2xl border-[1px] border-[#c1bdb0] bg-white p-8  ${learnShowing ? "block" : "hidden"}`}
+        className={`fixed left-[50%] top-[110px] z-20 w-[92vw] -translate-x-[50%] rounded-2xl border-[1px] border-[#c1bdb0] bg-white p-8 ${learnShowing ? "block" : "hidden"}`}
       >
         <div className="flex gap-6 p-4">
           {LearnDropdown.map((section) => (
-            <div>
+            <div
+              key={section.title}
+              className="transition-opacity duration-300 ease-in-out hover:opacity-80"
+            >
               <img
                 src={section.image}
                 alt={section.title}

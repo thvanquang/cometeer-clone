@@ -1,5 +1,5 @@
-// import React, { useState } from "react";
-import Navbar from "../Components/Navbar";
+import React from "react";
+
 import Header from "../Components/Header";
 // import Triptych from "../Components/Triptych";
 import ImageBullets from "../Components/ImageBullets";
@@ -9,14 +9,12 @@ import RoasterPartners from "../Components/RoasterPartners";
 import ProductDescription from "../Components/ProductDescription";
 import CometeerPeople from "../Components/CometeerPeople";
 import Banner from "../Components/Banner";
-import Footer from "../Components/Footer";
 import AwardCarousel from "../Components/AwardCarousel";
 import MagazineComment from "../Components/MagazineComment";
 
-const Home = () => {
+const HomePage = () => {
   return (
-    <div className="">
-      <Navbar />
+    <div>
       <Header />
       {/* <Triptych /> */}
       <ImageBullets />
@@ -28,9 +26,8 @@ const Home = () => {
       <ProductDescription />
       <CometeerPeople />
       <Banner />
-      <Footer />
     </div>
   );
 };
 
-export default Home;
+export default HomePage;

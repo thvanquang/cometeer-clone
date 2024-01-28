@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import BestBean from "../Assets/Products/best-beans.png";
 import Spaceman from "../Assets/Products/spaceman.png";
@@ -41,13 +41,18 @@ const Boxs = [
   },
 ];
 
-const Products = () => {
+const Products = ({ parentCallback }) => {
   const [boxSelector, setBoxSelector] = useState("Mixed");
 
   const boxSelected = Boxs.find((box) => box.title === boxSelector);
 
+  const ref = useRef(null);
+  useEffect(() => {
+    parentCallback(ref.current.scrollHeight);
+  });
+
   return (
-    <div className="mx-auto max-w-[1320px] gap-4 p-6 ">
+    <div ref={ref} className="mx-auto max-w-[1320px] gap-4 p-6 ">
       <div className="min-w-[50%] justify-center gap-4 md:grid md:grid-cols-2">
         {/* For larger than mobile screen */}
         <div className="row-span-full mx-[-1rem] mb-4 grid grid-cols-6 [@media(max-width:768px)]:hidden">
