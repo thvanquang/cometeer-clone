@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 
 import BestBean from "../Assets/Products/best-beans.png";
 import Spaceman from "../Assets/Products/spaceman.png";
@@ -47,9 +47,9 @@ const Products = ({ parentCallback }) => {
   const boxSelected = Boxs.find((box) => box.title === boxSelector);
 
   const ref = useRef(null);
-  useEffect(() => {
-    parentCallback(ref.current.scrollHeight);
-  });
+  // useEffect(() => {
+  //   parentCallback(ref.current.scrollHeight);
+  // });
 
   return (
     <div ref={ref} className="mx-auto max-w-[1320px] gap-4 p-6 ">

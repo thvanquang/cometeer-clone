@@ -10,9 +10,6 @@ const ProductNavbar = ({ positionToFixedNavbar }) => {
   const handleScroll = useCallback(() => {
     const currentScrollPosition = window.scrollY;
 
-    console.log(currentScrollPosition);
-    console.log(positionToFixedNavbar);
-
     if (currentScrollPosition < prevScrollPosition) {
       setIsScrollingUp(true);
     } else {
@@ -36,7 +33,7 @@ const ProductNavbar = ({ positionToFixedNavbar }) => {
 
   return (
     <div
-      className={`flex w-[100vw]  gap-4 bg-[#f7eabc] p-8 ${shouldFixedNavbar && !isScrollingUp && "fixed top-[1rem]"}`}
+      className={`flex w-[100vw]  gap-4 bg-[#f7eabc] p-8 ${!isScrollingUp && "fixed top-[1rem]"}`}
     >
       <LinkScroll
         className="rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"

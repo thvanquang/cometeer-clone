@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import classes from "./ProductsRoot.module.css";
 
 import ProductNavbar from "../Components/ProductNavbar";
+import ProductComparament from "../Components/ProductComparament";
 
 const ProductsRootLayout = () => {
   const [postionToFixedNavbar, setPositionToFixedNavbar] = useState();
@@ -12,6 +13,7 @@ const ProductsRootLayout = () => {
     <div className={classes.background}>
       <Outlet context={[postionToFixedNavbar, setPositionToFixedNavbar]} />
       <ProductNavbar postionToFixedNavbar={postionToFixedNavbar} />
+      <ProductComparament />
     </div>
   );
 };
