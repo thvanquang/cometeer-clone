@@ -5,7 +5,7 @@ import Logo from "../Assets/Navbar/logo.png";
 const ProductComparament = () => {
   return (
     <div className="w-full overflow-y-auto p-8">
-      <h1 className="mb-8 text-4xl font-bold">Our Coffee vs Them</h1>
+      <h1 className="mb-8 text-3xl font-bold">Our Coffee vs Them</h1>
 
       <div className="flex w-full min-w-[1000px] items-end justify-center text-center text-xl font-normal">
         <div className="min-w-[9.375rem] flex-1 rounded-s-2xl border-y border-l border-[#a0a0a0] bg-[#e3dcc2] text-start font-semibold">

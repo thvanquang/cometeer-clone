@@ -11,7 +11,7 @@ const Header = () => {
         <video
           playsInline={true}
           autoPlay="autoplay"
-          loop="loop"
+          loop={true}
           muted="muted"
           preload="metadata"
           className="absolute left-[50%] top-[50%] inline-block h-full w-auto -translate-x-1/2 -translate-y-1/2 object-cover xl:w-full"

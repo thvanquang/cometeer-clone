@@ -5,6 +5,7 @@ import classes from "./ProductsRoot.module.css";
 
 import ProductNavbar from "../Components/ProductNavbar";
 import ProductComparament from "../Components/ProductComparament";
+import ProductWhatYouGet from "../Components/ProductWhatYouGet";
 
 const ProductsRootLayout = () => {
   const [postionToFixedNavbar, setPositionToFixedNavbar] = useState();
@@ -14,6 +15,7 @@ const ProductsRootLayout = () => {
       <Outlet context={[postionToFixedNavbar, setPositionToFixedNavbar]} />
       <ProductNavbar postionToFixedNavbar={postionToFixedNavbar} />
       <ProductComparament />
+      <ProductWhatYouGet />
     </div>
   );
 };

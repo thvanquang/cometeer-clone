@@ -33,38 +33,40 @@ const ProductNavbar = ({ positionToFixedNavbar }) => {
 
   return (
     <div
-      className={`flex w-[100vw]  gap-4 bg-[#f7eabc] p-8 ${!isScrollingUp && "fixed top-[1rem]"}`}
+      className={`w-screen bg-[#f7eabc] p-8 ${!isScrollingUp && "fixed top-[1rem]"}`}
     >
-      <LinkScroll
-        className="rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"
-        to=""
-      >
-        Our Coffee Vs Them
-      </LinkScroll>
-      <LinkScroll
-        className="rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"
-        to=""
-      >
-        What's in your order
-      </LinkScroll>
-      <LinkScroll
-        className="rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"
-        to=""
-      >
-        Your Cometeer recipes
-      </LinkScroll>
-      <LinkScroll
-        className="rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"
-        to=""
-      >
-        Customer reviews
-      </LinkScroll>
-      <LinkScroll
-        className="rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"
-        to=""
-      >
-        FAQs
-      </LinkScroll>
+      <div className="w- flex min-w-full flex-nowrap gap-4">
+        <LinkScroll
+          className="min-w-fit rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"
+          to=""
+        >
+          Our Coffee Vs Them
+        </LinkScroll>
+        <LinkScroll
+          className="min-w-fit rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"
+          to=""
+        >
+          What's in your order
+        </LinkScroll>
+        <LinkScroll
+          className="min-w-fit rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"
+          to=""
+        >
+          Your Cometeer recipes
+        </LinkScroll>
+        <LinkScroll
+          className="min-w-fit rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"
+          to=""
+        >
+          Customer reviews
+        </LinkScroll>
+        <LinkScroll
+          className="min-w-fit rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"
+          to=""
+        >
+          FAQs
+        </LinkScroll>
+      </div>
     </div>
   );
 };
