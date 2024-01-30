@@ -2,11 +2,16 @@ import React, { useState } from "react";
 
 const ProductWhatYouGet = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [playV, setPlayV] = useState(0);
 
-  const prevSlide = () =>
+  const prevSlide = () => {
     setCurrentSlide(currentSlide === 0 ? 2 : currentSlide - 1);
-  const nextSlide = () =>
+    setPlayV(currentSlide);
+  };
+  const nextSlide = () => {
     setCurrentSlide(currentSlide === 2 ? 0 : currentSlide + 1);
+    setPlayV(currentSlide);
+  };
 
   return (
     <div className="w-full p-8">
@@ -30,9 +35,9 @@ const ProductWhatYouGet = () => {
 
             <div>
               <video
-                playsInline={true}
-                autoPlay="true"
-                loop={false}
+                playsInline
+                autoPlay={playV === 0 ? true : false}
+                loop={playV === 0 ? true : false}
                 muted="muted"
                 preload="metadata"
               >
@@ -61,7 +66,7 @@ const ProductWhatYouGet = () => {
             <div>
               <video
                 playsInline={true}
-                autoPlay="true"
+                autoPlay={true}
                 loop={false}
                 muted="muted"
                 preload="metadata"
@@ -87,7 +92,7 @@ const ProductWhatYouGet = () => {
             <div>
               <video
                 playsInline={true}
-                autoPlay="true"
+                autoPlay={true}
                 loop={false}
                 muted="muted"
                 preload="metadata"
