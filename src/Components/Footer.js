@@ -30,11 +30,11 @@ const Footer = () => {
           <p>Receive special offers delivered directly in your inbox.</p>
         </div>
 
-        {/* edit form and button type */}
+        {/* FIXME edit form and button type */}
         <form className="flex w-[30em] justify-between rounded-full bg-white p-2">
           <input
             placeholder="Email Address"
-            className="ml-2 w-full placeholder:text-[#bfbebe]"
+            className="mx-4 w-full placeholder:text-[#bfbebe] focus:outline-none"
           />
           <button className="rounded-full bg-[#2b2c2c] p-5 text-white">
             {arrow}

@@ -33,7 +33,7 @@ const ProductNavbar = ({ positionToFixedNavbar }) => {
 
   return (
     <div
-      className={`w-screen bg-[#f7eabc] p-8 ${!isScrollingUp && "fixed top-[1rem]"}`}
+      className={`z-20 w-screen bg-[#f7eabc] p-8 ${!isScrollingUp && "fixed top-[0]"}`}
     >
       <div className="w- flex min-w-full flex-nowrap gap-4">
         <LinkScroll
