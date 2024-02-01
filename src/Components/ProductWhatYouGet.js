@@ -174,7 +174,10 @@ const ProductWhatYouGet = () => {
       {/* Product features */}
       <div className="my-8 grid grid-cols-2 justify-center gap-4 lg:flex">
         {PRODUCT_FEATURES.map((section) => (
-          <div key={section.title} className="group  space-y-3 p-8 text-center">
+          <div
+            key={section.title}
+            className="group w-full space-y-3 p-8 text-center"
+          >
             <div className="relative mx-auto h-[3.125rem] w-[3.125rem]">
               <img
                 src={section.image}
@@ -187,7 +190,7 @@ const ProductWhatYouGet = () => {
                 className="absolute top-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
               />
             </div>
-            <h2 className="mx-auto w-[70%] text-xl font-bold uppercase">
+            <h2 className="mx-auto w-[80%] text-xl font-bold uppercase">
               {section.title}
             </h2>
             <p>{section.content}</p>

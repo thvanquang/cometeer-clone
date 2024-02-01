@@ -6,6 +6,7 @@ import classes from "./ProductsRoot.module.css";
 import ProductNavbar from "../Components/ProductNavbar";
 import ProductComparament from "../Components/ProductComparament";
 import ProductWhatYouGet from "../Components/ProductWhatYouGet";
+import ProductCometeerRecipes from "../Components/ProductCometeerRecipes"
 
 const ProductsRootLayout = () => {
   const [postionToFixedNavbar, setPositionToFixedNavbar] = useState();
@@ -16,6 +17,7 @@ const ProductsRootLayout = () => {
       <ProductNavbar postionToFixedNavbar={postionToFixedNavbar} />
       <ProductComparament />
       <ProductWhatYouGet />
+      <ProductCometeerRecipes />
     </div>
   );
 };
