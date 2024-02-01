@@ -159,6 +159,7 @@ const ProductWhatYouGet = () => {
             <div
               className="absolute -top-[25%] h-[3px] w-1/3 bg-[#2b2c2c] transition-transform duration-300 ease-in"
               style={{ transform: `translateX(${currentSlide * 100}%)` }}
+              // this 1/3 is hardcode ;__;
             ></div>
           </div>
 
