@@ -89,7 +89,7 @@ export const stars = (
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="h-5 w-5 text-[#1a1a1a]"
+      className="h-5 w-5"
     >
       <path
         fillRule="evenodd"
@@ -101,7 +101,7 @@ export const stars = (
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="h-5 w-5 text-[#1a1a1a]"
+      className="h-5 w-5"
     >
       <path
         fillRule="evenodd"
@@ -113,7 +113,7 @@ export const stars = (
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="h-5 w-5 text-[#1a1a1a]"
+      className="h-5 w-5"
     >
       <path
         fillRule="evenodd"
@@ -125,7 +125,7 @@ export const stars = (
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="h-5 w-5 text-[#1a1a1a]"
+      className="h-5 w-5"
     >
       <path
         fillRule="evenodd"
@@ -137,7 +137,7 @@ export const stars = (
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="h-5 w-5 text-[#1a1a1a]"
+      className="h-5 w-5"
     >
       <path
         fillRule="evenodd"

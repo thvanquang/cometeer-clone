@@ -118,7 +118,7 @@ const QuoteCarousel = () => {
         {Slides.map((slide) => (
           <div key={slide.author} className="mb-12 min-w-full">
             <div className="mx-auto max-w-[460px] rounded-lg bg-[#f3f5e8] p-8">
-              <div className="mb-4">{stars}</div>
+              <div className="mb-4 text-[#1a1a1a]">{stars}</div>
               <h4 className="mb-8 font-semibold">{slide.title}</h4>
               <p className="mb-4 font-semibold italic">{slide.quote}</p>
               <p className="max-w-[220px] text-xs font-medium uppercase leading-6 tracking-widest">

@@ -56,7 +56,7 @@ const ProductCometeerRecipes = () => {
   );
 
   const [videoContainerWidth, setVideoContainerWidth] = useState(
-    window.innerWidth >= 1024 ? 25 : 100,
+    window.innerWidth >= 1024 ? 30 : 100,
   );
 
   // create new array fill with false value

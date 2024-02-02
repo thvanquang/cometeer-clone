@@ -6,7 +6,8 @@ import classes from "./ProductsRoot.module.css";
 import ProductNavbar from "../Components/ProductNavbar";
 import ProductComparament from "../Components/ProductComparament";
 import ProductWhatYouGet from "../Components/ProductWhatYouGet";
-import ProductCometeerRecipes from "../Components/ProductCometeerRecipes"
+import ProductCometeerRecipes from "../Components/ProductCometeerRecipes";
+import ProductReviewCarousel from "../Components/ProductReviewCarousel";
 
 const ProductsRootLayout = () => {
   const [postionToFixedNavbar, setPositionToFixedNavbar] = useState();
@@ -18,6 +19,7 @@ const ProductsRootLayout = () => {
       <ProductComparament />
       <ProductWhatYouGet />
       <ProductCometeerRecipes />
+      <ProductReviewCarousel />
     </div>
   );
 };
