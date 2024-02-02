@@ -4,6 +4,7 @@ import {
   coffeeBean,
   fiveCoffeeBean,
 } from "../../Assets/icons/icons";
+import Reviews from "./Reviews";
 
 const FILTERS = [
   ["Bitternes", "Taste", "Strength", "Feelings", "Fit", "Smell", "..."],
@@ -14,7 +15,7 @@ const ProductCustomerReviews = () => {
   const [ratingDropdown, setRatingDropdown] = useState(false);
   const [imagesDropdown, setImagesDropdown] = useState(false);
   return (
-    <div className="p-12">
+    <div className="relative px-6 py-12">
       <h1 className="text-3xl font-bold">Reviews</h1>
 
       <div className="mt-8">
@@ -60,7 +61,7 @@ const ProductCustomerReviews = () => {
                 <i>{chevronDown}</i>
               </div>
               {ratingDropdown && (
-                <ul className="absolute left-0 right-0 top-[105%] rounded-md border border-[#bbb] bg-white p-1 ">
+                <ul className="absolute left-0 right-0 top-[105%] z-10 rounded-md border border-[#bbb] bg-white p-1 ">
                   <li className="p-1 font-semibold hover:bg-[#bbb]">All</li>
                   <li className="flex p-1 hover:bg-[#bbb]">{fiveCoffeeBean}</li>
                   <li className="flex p-1 hover:bg-[#bbb]">
@@ -106,7 +107,7 @@ const ProductCustomerReviews = () => {
                 <i>{chevronDown}</i>
               </div>
               {imagesDropdown && (
-                <ul className="absolute left-0 right-0 top-[105%] rounded-md border border-[#bbb] bg-white p-1 ">
+                <ul className="absolute left-0 right-0 top-[105%] z-10 rounded-md border border-[#bbb] bg-white p-1 ">
                   <li className="p-1 font-semibold hover:bg-[#bbb]">All</li>
                   <li className="p-1 text-[#6b6d76] hover:bg-[#bbb]">
                     With Images & Videos
@@ -118,7 +119,24 @@ const ProductCustomerReviews = () => {
         </div>
       </div>
 
-      <div></div>
+      <Reviews />
+
+      {/*!!! Not functioning yet */}
+      <div className="absolute bottom-10 left-[50%] -translate-x-[50%] text-center">
+        <div className="flex items-center gap-3">
+          <span className="rotate-90 scale-75">{chevronDown}</span>
+          <span className="font-bold">1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>6</span>
+          <span>7</span>
+          <span>8</span>
+          <span>9</span>
+          <span className="-rotate-90 scale-75">{chevronDown}</span>
+        </div>
+      </div>
     </div>
   );
 };

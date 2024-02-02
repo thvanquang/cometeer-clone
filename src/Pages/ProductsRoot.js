@@ -9,6 +9,7 @@ import WhatYouGet from "../Components/Products/WhatYouGet";
 import CometeerRecipes from "../Components/Products/CometeerRecipes";
 import ReviewCarousel from "../Components/Products/ReviewCarousel";
 import CustomerReviews from "../Components/Products/CustomerReviews";
+import FAQs from "../Components/Products/FAQs";
 
 const ProductsRootLayout = () => {
   const [postionToFixedNavbar, setPositionToFixedNavbar] = useState();
@@ -22,6 +23,7 @@ const ProductsRootLayout = () => {
       <CometeerRecipes />
       <ReviewCarousel />
       <CustomerReviews />
+      <FAQs />
     </div>
   );
 };
