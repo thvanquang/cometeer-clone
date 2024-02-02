@@ -1,6 +1,6 @@
 import React from "react";
 
-import Logo from "../Assets/Navbar/logo.png";
+import Logo from "../../Assets/Navbar/logo.png";
 
 const ProductComparament = () => {
   return (

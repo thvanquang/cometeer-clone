@@ -1,18 +1,18 @@
 import React, { useState, useRef } from "react";
 
-import { playButton } from "../Assets/icons/icons";
-import { arrow } from "../Assets/icons/icons";
+import { playButton } from "../../Assets/icons/icons";
+import { arrow } from "../../Assets/icons/icons";
 
-import IcedCoffee from "../Assets/ProductCometeerRecipes/iced-coffee.mp4";
-import IcedCoffeePoster from "../Assets/ProductCometeerRecipes/poster-iced-coffee.png";
-import HotCoffee from "../Assets/ProductCometeerRecipes/hot-coffee.mp4";
-import HotCoffeePoster from "../Assets/ProductCometeerRecipes/poster-hot-coffe.png";
-import IcedLatte from "../Assets/ProductCometeerRecipes/iced-latte.mp4";
-import IcedLattePoster from "../Assets/ProductCometeerRecipes/poster-iced-latte.png";
-import HotLatte from "../Assets/ProductCometeerRecipes/hot-latte.mp4";
-import HotLattePoster from "../Assets/ProductCometeerRecipes/poster-hot-latte.png";
-import Affogato from "../Assets/ProductCometeerRecipes/affogato.mp4";
-import AffogatoPoster from "../Assets/ProductCometeerRecipes/poster-affogato.png";
+import IcedCoffee from "../../Assets/ProductCometeerRecipes/iced-coffee.mp4";
+import IcedCoffeePoster from "../../Assets/ProductCometeerRecipes/poster-iced-coffee.png";
+import HotCoffee from "../../Assets/ProductCometeerRecipes/hot-coffee.mp4";
+import HotCoffeePoster from "../../Assets/ProductCometeerRecipes/poster-hot-coffe.png";
+import IcedLatte from "../../Assets/ProductCometeerRecipes/iced-latte.mp4";
+import IcedLattePoster from "../../Assets/ProductCometeerRecipes/poster-iced-latte.png";
+import HotLatte from "../../Assets/ProductCometeerRecipes/hot-latte.mp4";
+import HotLattePoster from "../../Assets/ProductCometeerRecipes/poster-hot-latte.png";
+import Affogato from "../../Assets/ProductCometeerRecipes/affogato.mp4";
+import AffogatoPoster from "../../Assets/ProductCometeerRecipes/poster-affogato.png";
 
 const RECIPES = [
   {

@@ -1,19 +1,19 @@
 import React from "react";
 
-import CounterCulture from "../Assets/RoasterPartners/counter-culture.png";
-import BirdRock from "../Assets/RoasterPartners/bird-rock.png";
-import GeorgeHowell from "../Assets/RoasterPartners/george-howell.png";
-import Equator from "../Assets/RoasterPartners/equator.png";
-import Birch from "../Assets/RoasterPartners/birch.png";
-import JoeCoffee from "../Assets/RoasterPartners/joe-coffee.png";
-import RedBay from "../Assets/RoasterPartners/red-bay.png";
-import GGet from "../Assets/RoasterPartners/gget.png";
-import Klatch from "../Assets/RoasterPartners/klatch.png";
-import Onyx from "../Assets/RoasterPartners/onyx.png";
-import SquareMile from "../Assets/RoasterPartners/square-mile.png";
-import BlackWhite from "../Assets/RoasterPartners/black-white.png";
+import CounterCulture from "../../Assets/RoasterPartners/counter-culture.png";
+import BirdRock from "../../Assets/RoasterPartners/bird-rock.png";
+import GeorgeHowell from "../../Assets/RoasterPartners/george-howell.png";
+import Equator from "../../Assets/RoasterPartners/equator.png";
+import Birch from "../../Assets/RoasterPartners/birch.png";
+import JoeCoffee from "../../Assets/RoasterPartners/joe-coffee.png";
+import RedBay from "../../Assets/RoasterPartners/red-bay.png";
+import GGet from "../../Assets/RoasterPartners/gget.png";
+import Klatch from "../../Assets/RoasterPartners/klatch.png";
+import Onyx from "../../Assets/RoasterPartners/onyx.png";
+import SquareMile from "../../Assets/RoasterPartners/square-mile.png";
+import BlackWhite from "../../Assets/RoasterPartners/black-white.png";
 
-import ButtonArrow from "../Utilities/ButtonArrow";
+import ButtonArrow from "../../Utilities/ButtonArrow";
 
 const Roasters = [
   {

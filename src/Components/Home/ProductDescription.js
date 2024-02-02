@@ -1,8 +1,8 @@
 import React from "react";
 
-import Recyclable from "../Assets/ProductDescription/recyclable.png";
-import LessFoodWaste from "../Assets/ProductDescription/less-food-waste.png";
-import CompostedGround from "../Assets/ProductDescription/composted-ground.png";
+import Recyclable from "../../Assets/ProductDescription/recyclable.png";
+import LessFoodWaste from "../../Assets/ProductDescription/less-food-waste.png";
+import CompostedGround from "../../Assets/ProductDescription/composted-ground.png";
 
 const Descriptions = [
   {

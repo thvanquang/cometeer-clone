@@ -2,15 +2,16 @@ import React, { useState, useRef, useEffect } from "react";
 
 import { useInView } from "react-intersection-observer";
 
-import { arrow } from "../Assets/icons/icons";
-import Feature0 from "../Assets/ProductWhatYouGet/icon-0.png";
-import Feature0hover from "../Assets/ProductWhatYouGet/icon-0-hover.png";
-import Feature1 from "../Assets/ProductWhatYouGet/icon-1.png";
-import Feature1hover from "../Assets/ProductWhatYouGet/icon-1-hover.png";
-import Feature2 from "../Assets/ProductWhatYouGet/icon-2.png";
-import Feature2hover from "../Assets/ProductWhatYouGet/icon-2-hover.png";
-import Feature3 from "../Assets/ProductWhatYouGet/icon-3.png";
-import Feature3hover from "../Assets/ProductWhatYouGet/icon-3-hover.png";
+import { arrow } from "../../Assets/icons/icons";
+
+import Feature0 from "../../Assets/ProductWhatYouGet/icon-0.png";
+import Feature0hover from "../../Assets/ProductWhatYouGet/icon-0-hover.png";
+import Feature1 from "../../Assets/ProductWhatYouGet/icon-1.png";
+import Feature1hover from "../../Assets/ProductWhatYouGet/icon-1-hover.png";
+import Feature2 from "../../Assets/ProductWhatYouGet/icon-2.png";
+import Feature2hover from "../../Assets/ProductWhatYouGet/icon-2-hover.png";
+import Feature3 from "../../Assets/ProductWhatYouGet/icon-3.png";
+import Feature3hover from "../../Assets/ProductWhatYouGet/icon-3-hover.png";
 
 const WHAT_YOU_GET = [
   {

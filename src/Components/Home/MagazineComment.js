@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import Wirecutter from "../Assets/MagazineComment/Wirecutter.png";
-import BuzzFeed from "../Assets/MagazineComment/BuzzFeed.png";
-import bonAppetit from "../Assets/MagazineComment/bon-appetit.png";
+import Wirecutter from "../../Assets/MagazineComment/Wirecutter.png";
+import BuzzFeed from "../../Assets/MagazineComment/BuzzFeed.png";
+import bonAppetit from "../../Assets/MagazineComment/bon-appetit.png";
 
 import classes from "./MagazineComment.module.css";
 

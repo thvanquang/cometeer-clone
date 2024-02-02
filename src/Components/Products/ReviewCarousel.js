@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { arrow, stars } from "../Assets/icons/icons";
+import { arrow, stars } from "../../Assets/icons/icons";
 
 const REVIEWS = [
   {
@@ -28,9 +28,9 @@ const ProductReviewCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const prevSlide = () =>
-    setCurrentSlide(currentSlide === 0 ? 3 : currentSlide - 1);
+    setCurrentSlide(currentSlide === 0 ? REVIEWS.length - 1 : currentSlide - 1);
   const nextSlide = () =>
-    setCurrentSlide(currentSlide === 3 ? 0 : currentSlide + 1);
+    setCurrentSlide(currentSlide === REVIEWS.length - 1 ? 0 : currentSlide + 1);
 
   return (
     <div className="">

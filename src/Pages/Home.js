@@ -1,16 +1,16 @@
 import React from "react";
 
-import Header from "../Components/Header";
-// import Triptych from "../Components/Triptych";
-import ImageBullets from "../Components/ImageBullets";
-import QuoteCarousel from "../Components/QuoteCarousel";
+import Header from "../Components/Home/Header";
+// import Triptych from "../Components/Home/Triptych";
+import ImageBullets from "../Components/Home/ImageBullets";
+import QuoteCarousel from "../Components/Home/QuoteCarousel";
 import Products from "../Components/Products";
-import RoasterPartners from "../Components/RoasterPartners";
-import ProductDescription from "../Components/ProductDescription";
-import CometeerPeople from "../Components/CometeerPeople";
-import Banner from "../Components/Banner";
-import AwardCarousel from "../Components/AwardCarousel";
-import MagazineComment from "../Components/MagazineComment";
+import RoasterPartners from "../Components/Home/RoasterPartners";
+import ProductDescription from "../Components/Home/ProductDescription";
+import CometeerPeople from "../Components/Home/CometeerPeople";
+import Banner from "../Components/Home/Banner";
+import AwardCarousel from "../Components/Home/AwardCarousel";
+import MagazineComment from "../Components/Home/MagazineComment";
 
 const HomePage = () => {
   return (

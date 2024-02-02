@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { stars } from "../Assets/icons/icons";
+import { stars } from "../../Assets/icons/icons";
 
 const Slides = [
   {

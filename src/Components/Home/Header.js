@@ -1,8 +1,8 @@
 import React from "react";
 
-import Video from "../Assets/Banner/video.mp4";
+import Video from "../../Assets/Banner/video.mp4";
 
-import ButtonArrow from "../Utilities/ButtonArrow";
+import ButtonArrow from "../../Utilities/ButtonArrow";
 
 const Header = () => {
   return (

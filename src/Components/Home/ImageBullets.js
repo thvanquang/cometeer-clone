@@ -1,11 +1,11 @@
 import React from "react";
 
-import ButtonArrow from "../Utilities/ButtonArrow";
+import ButtonArrow from "../../Utilities/ButtonArrow";
 
-import BestBean from "../Assets/ImageBullets/the-best-beans.png";
-import PerfectlyBrewed from "../Assets/ImageBullets/perfectly-brewed.png";
-import Delivered from "../Assets/ImageBullets/delivered.png";
-import CafeDrink from "../Assets/ImageBullets/cafe-drink-in-sec.png";
+import BestBean from "../../Assets/ImageBullets/the-best-beans.png";
+import PerfectlyBrewed from "../../Assets/ImageBullets/perfectly-brewed.png";
+import Delivered from "../../Assets/ImageBullets/delivered.png";
+import CafeDrink from "../../Assets/ImageBullets/cafe-drink-in-sec.png";
 
 const BULLETS = [
   {

@@ -3,11 +3,12 @@ import { Outlet } from "react-router-dom";
 
 import classes from "./ProductsRoot.module.css";
 
-import ProductNavbar from "../Components/ProductNavbar";
-import ProductComparament from "../Components/ProductComparament";
-import ProductWhatYouGet from "../Components/ProductWhatYouGet";
-import ProductCometeerRecipes from "../Components/ProductCometeerRecipes";
-import ProductReviewCarousel from "../Components/ProductReviewCarousel";
+import ProductNavbar from "../Components/Products/ProductNavbar";
+import Comparament from "../Components/Products/Comparament";
+import WhatYouGet from "../Components/Products/WhatYouGet";
+import CometeerRecipes from "../Components/Products/CometeerRecipes";
+import ReviewCarousel from "../Components/Products/ReviewCarousel";
+import CustomerReviews from "../Components/Products/CustomerReviews";
 
 const ProductsRootLayout = () => {
   const [postionToFixedNavbar, setPositionToFixedNavbar] = useState();
@@ -16,10 +17,11 @@ const ProductsRootLayout = () => {
     <div className={classes.background}>
       <Outlet context={[postionToFixedNavbar, setPositionToFixedNavbar]} />
       <ProductNavbar postionToFixedNavbar={postionToFixedNavbar} />
-      <ProductComparament />
-      <ProductWhatYouGet />
-      <ProductCometeerRecipes />
-      <ProductReviewCarousel />
+      <Comparament />
+      <WhatYouGet />
+      <CometeerRecipes />
+      <ReviewCarousel />
+      <CustomerReviews />
     </div>
   );
 };

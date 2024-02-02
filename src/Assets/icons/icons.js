@@ -288,3 +288,36 @@ export const playButton = (
     />
   </svg>
 );
+
+export const coffeeBean = (
+  <svg
+    version="1.0"
+    id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    x="0px"
+    y="0px"
+    width="24px"
+    height="24px"
+    viewBox="0 0 100 100"
+    enable-background="new 0 0 100 100"
+  >
+    <path
+      d="M46.729,48.542c14.89-6.166,27.468-17.836,34.544-33.584C68.451,5.027,45.235,10.372,27.794,27.81
+	C11.244,44.349,5.606,66.094,13.563,79.222C20.841,64.944,32.768,54.319,46.729,48.542z"
+    ></path>
+    <path
+      d="M86.127,20.296c-7.73,15.551-20.618,27.689-36.842,34.411C35.389,60.456,24.5,71.091,18.331,84.714
+	c12.731,10.367,36.25,5.113,53.877-12.507C88.969,55.452,94.535,33.367,86.127,20.296z"
+    ></path>
+  </svg>
+);
+
+export const fiveCoffeeBean = (
+  <div className="flex">
+    <i className="-rotate-45">{coffeeBean}</i>
+    <i className="-rotate-45">{coffeeBean}</i>
+    <i className="-rotate-45">{coffeeBean}</i>
+    <i className="-rotate-45">{coffeeBean}</i>
+    <i className="-rotate-45">{coffeeBean}</i>
+  </div>
+);

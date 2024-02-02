@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import GeorgeHowell from "../Assets/CometeerPeople/GeorgeHowell.png";
-import DavidChang from "../Assets/CometeerPeople/DavidChang.png";
-import JamesHoffmann from "../Assets/CometeerPeople/JamesHoffmann.png";
+import GeorgeHowell from "../../Assets/CometeerPeople/GeorgeHowell.png";
+import DavidChang from "../../Assets/CometeerPeople/DavidChang.png";
+import JamesHoffmann from "../../Assets/CometeerPeople/JamesHoffmann.png";
 
 const People = [
   {
