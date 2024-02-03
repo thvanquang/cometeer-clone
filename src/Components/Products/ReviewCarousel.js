@@ -41,7 +41,7 @@ const ProductReviewCarousel = () => {
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {REVIEWS.map((review) => (
-            <div className="h-auto min-w-full">
+            <div key={review.author} className="h-auto min-w-full">
               <div className="mx-auto flex flex-col items-center gap-4 p-8 text-center">
                 <div className="text-[#633922]">{stars}</div>
                 <h3 className="text-2xl font-black lg:text-3xl">
@@ -71,6 +71,7 @@ const ProductReviewCarousel = () => {
         <div className="absolute bottom-10 left-0 right-0 flex justify-center gap-2">
           {REVIEWS.map((_, i) => (
             <button
+              key={i}
               className={`rounded-full border border-[#bbb] p-[6px] ${currentSlide === i ? "bg-[#2b2c2c]" : "bg-[#f3f5e8]"}`}
             ></button>
           ))}

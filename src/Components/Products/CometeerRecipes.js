@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Element } from "react-scroll";
 
 import { playButton } from "../../Assets/icons/icons";
 import { arrow } from "../../Assets/icons/icons";
@@ -108,7 +109,7 @@ const ProductCometeerRecipes = () => {
   });
 
   return (
-    <div className="overflow-hidden p-10">
+    <Element name="cometeer-recipes" className="overflow-hidden p-10">
       <h1 className="text-5xl font-bold">Your Cometeer Recipes</h1>
 
       <div
@@ -191,7 +192,7 @@ const ProductCometeerRecipes = () => {
           {arrow}
         </button>
       </div>
-    </div>
+    </Element>
   );
 };
 

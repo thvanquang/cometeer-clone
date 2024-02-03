@@ -314,7 +314,7 @@ export const coffeeBean = (
     width="20px"
     height="20px"
     viewBox="0 0 100 100"
-    enable-background="new 0 0 100 100"
+    enableBackground="new 0 0 100 100"
   >
     <path
       d="M46.729,48.542c14.89-6.166,27.468-17.836,34.544-33.584C68.451,5.027,45.235,10.372,27.794,27.81

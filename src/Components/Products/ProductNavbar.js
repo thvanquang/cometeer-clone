@@ -2,10 +2,36 @@ import React, { useState, useEffect, useCallback } from "react";
 
 import { Link as LinkScroll } from "react-scroll";
 
+import classes from "./ProductNavbar.module.css";
+
+const NAVBAR_ITEMS = [
+  {
+    name: "Our Coffee Vs Them",
+    address: "comparament",
+  },
+  {
+    name: "What's in your order",
+    address: "what-in-your-order",
+  },
+  {
+    name: "Your Cometeer recipes",
+    address: "cometeer-recipes",
+  },
+  {
+    name: "Customer reviews",
+    address: "customer-reviews",
+  },
+  {
+    name: "FAQs",
+    address: "faqs",
+  },
+];
+
 const ProductNavbar = ({ positionToFixedNavbar }) => {
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [prevScrollPosition, setPrevScrollPosition] = useState(window.scrollY);
-  const [shouldFixedNavbar, setShouldFixedNavbar] = useState(false);
+
+  const [activedLink, setActivedLink] = useState(0);
 
   const handleScroll = useCallback(() => {
     const currentScrollPosition = window.scrollY;
@@ -16,56 +42,53 @@ const ProductNavbar = ({ positionToFixedNavbar }) => {
       setIsScrollingUp(false);
     }
 
-    if (currentScrollPosition >= positionToFixedNavbar) {
-      setShouldFixedNavbar(true);
-    }
-
     setPrevScrollPosition(currentScrollPosition);
   }, [prevScrollPosition, positionToFixedNavbar]);
+
+  const setActivedHandler = (i) => {
+    if (window.innerWidth >= 900) {
+      return setActivedLink(0);
+    } else {
+      return setActivedLink(i);
+    }
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
+    window.addEventListener("resize", setActivedHandler);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", setActivedHandler);
     };
   }, [handleScroll]);
 
   return (
     <div
-      className={`z-20 w-screen bg-[#f7eabc] p-8 ${!isScrollingUp && "fixed top-[0]"}`}
+      className={`z-20 w-screen overflow-hidden bg-[#f7eabc] p-8 ${!isScrollingUp && "fixed top-[0]"}`}
     >
-      <div className="w- flex min-w-full flex-nowrap gap-4">
-        <LinkScroll
-          className="min-w-fit rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"
-          to=""
-        >
-          Our Coffee Vs Them
-        </LinkScroll>
-        <LinkScroll
-          className="min-w-fit rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"
-          to=""
-        >
-          What's in your order
-        </LinkScroll>
-        <LinkScroll
-          className="min-w-fit rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"
-          to=""
-        >
-          Your Cometeer recipes
-        </LinkScroll>
-        <LinkScroll
-          className="min-w-fit rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"
-          to=""
-        >
-          Customer reviews
-        </LinkScroll>
-        <LinkScroll
-          className="min-w-fit rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577]"
-          to=""
-        >
-          FAQs
-        </LinkScroll>
+      <div
+        className="flex min-w-full flex-nowrap gap-4 transition-transform duration-300 ease-in"
+        style={{
+          transform: `translateX(-${(activedLink <= 2 ? activedLink : 2) * 20}%)`,
+        }}
+      >
+        {NAVBAR_ITEMS.map((item, i) => (
+          <LinkScroll
+            key={item.name}
+            activeClass={classes.active}
+            onSetActive={() => setActivedHandler(i)}
+            spy={true}
+            smooth={true}
+            duration={500}
+            offset={-20}
+            className="min-w-fit rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577] hover:text-[#2b2c2c] lg:py-3"
+            to={item.address}
+          >
+            {item.name}
+          </LinkScroll>
+        ))}
       </div>
     </div>
   );

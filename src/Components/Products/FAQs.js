@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Element } from "react-scroll";
+
 import { plus } from "../../Assets/icons/icons";
 
 const FAQS = [
@@ -32,12 +34,12 @@ const FAQs = () => {
   };
 
   return (
-    <div className="px-6 py-14">
+    <Element name="faqs" className="px-6 py-14">
       <h1 className="text-4xl font-bold">FAQs</h1>
 
       <div className="mt-8">
         {FAQS.map((faq, i) => (
-          <div className="mt-2 first-of-type:mt-0">
+          <div key={faq.q} className="mt-2 first-of-type:mt-0">
             <div
               onClick={() => clickHandler(i)}
               className="flex items-center justify-between rounded-lg border border-[#a0a0a0] bg-[#f7f0d3] p-4 lg:py-6"
@@ -57,7 +59,7 @@ const FAQs = () => {
           </div>
         ))}
       </div>
-    </div>
+    </Element>
   );
 };
 

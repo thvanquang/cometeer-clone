@@ -12,12 +12,10 @@ import CustomerReviews from "../Components/Products/CustomerReviews";
 import FAQs from "../Components/Products/FAQs";
 
 const ProductsRootLayout = () => {
-  const [postionToFixedNavbar, setPositionToFixedNavbar] = useState();
-
   return (
     <div className={classes.background}>
-      <Outlet context={[postionToFixedNavbar, setPositionToFixedNavbar]} />
-      <ProductNavbar postionToFixedNavbar={postionToFixedNavbar} />
+      <Outlet />
+      <ProductNavbar />
       <Comparament />
       <WhatYouGet />
       <CometeerRecipes />

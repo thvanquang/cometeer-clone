@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { Element } from "react-scroll";
+
 import {
   chevronDown,
   coffeeBean,
@@ -14,8 +16,26 @@ const FILTERS = [
 const ProductCustomerReviews = () => {
   const [ratingDropdown, setRatingDropdown] = useState(false);
   const [imagesDropdown, setImagesDropdown] = useState(false);
+
+  const dropdownRef = useRef();
+  useEffect(() => {
+    const handler = (e) => {
+      if (!dropdownRef.current.contains(e.target)) {
+        setImagesDropdown(false);
+        setRatingDropdown(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
+  // this ^ for click outside the dropdow, we close it
+
   return (
-    <div className="relative px-6 py-12">
+    <Element name="customer-reviews" className="relative px-6 py-12">
       <h1 className="text-3xl font-bold">Reviews</h1>
 
       <div className="mt-8">
@@ -29,9 +49,12 @@ const ProductCustomerReviews = () => {
             {/* For larger than mobile screen */}
             <div className="space-y-4">
               {FILTERS.map((filterGroup) => (
-                <div className="hidden gap-3 lg:flex">
+                <div key={filterGroup[0]} className="hidden gap-3 lg:flex">
                   {filterGroup.map((filter) => (
-                    <button className="rounded-sm bg-[#bbb] p-3 text-black opacity-50 hover:opacity-70">
+                    <button
+                      key={filter}
+                      className="rounded-sm bg-[#bbb] p-3 text-black opacity-50 hover:opacity-70"
+                    >
                       {filter}
                     </button>
                   ))}
@@ -41,14 +64,17 @@ const ProductCustomerReviews = () => {
             {/* For mobile screen */}
             <div className="flex w-1/2 flex-wrap gap-4 lg:hidden">
               {FILTERS[0].map((filter) => (
-                <button className="rounded-sm bg-[#bbb] p-3 text-black opacity-50 hover:opacity-70">
+                <button
+                  key={filter}
+                  className="rounded-sm bg-[#bbb] p-3 text-black opacity-50 hover:opacity-70"
+                >
                   {filter}
                 </button>
               ))}
             </div>
           </div>
 
-          <div className="my-8 flex gap-4">
+          <div ref={dropdownRef} className="my-8 flex w-fit gap-4">
             <span className="relative cursor-pointer">
               <div
                 onClick={() => {
@@ -137,7 +163,7 @@ const ProductCustomerReviews = () => {
           <span className="-rotate-90 scale-75">{chevronDown}</span>
         </div>
       </div>
-    </div>
+    </Element>
   );
 };
 
