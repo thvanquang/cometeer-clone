@@ -27,7 +27,7 @@ const NAVBAR_ITEMS = [
   },
 ];
 
-const ProductNavbar = ({ positionToFixedNavbar }) => {
+const ProductNavbar = () => {
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [prevScrollPosition, setPrevScrollPosition] = useState(window.scrollY);
 
@@ -43,7 +43,7 @@ const ProductNavbar = ({ positionToFixedNavbar }) => {
     }
 
     setPrevScrollPosition(currentScrollPosition);
-  }, [prevScrollPosition, positionToFixedNavbar]);
+  }, [prevScrollPosition]);
 
   const setActivedHandler = (i) => {
     if (window.innerWidth >= 900) {
@@ -66,7 +66,7 @@ const ProductNavbar = ({ positionToFixedNavbar }) => {
 
   return (
     <div
-      className={`z-20 w-screen overflow-hidden bg-[#f7eabc] p-8 ${!isScrollingUp && "fixed top-[0]"}`}
+      className={`z-20 w-screen overflow-hidden bg-[#f7eabc] p-8 ${!isScrollingUp && "fixed top-0"}`}
     >
       <div
         className="flex min-w-full flex-nowrap gap-4 transition-transform duration-300 ease-in"
@@ -83,7 +83,7 @@ const ProductNavbar = ({ positionToFixedNavbar }) => {
             smooth={true}
             duration={500}
             offset={-20}
-            className="min-w-fit rounded-full border-[1px] border-black px-4 py-2 uppercase hover:bg-[#f5d577] hover:text-[#2b2c2c] lg:py-3"
+            className="min-w-fit rounded-full border-[1px] border-black px-5 py-2 uppercase hover:bg-[#f5d577] hover:text-[#2b2c2c] lg:py-2"
             to={item.address}
           >
             {item.name}

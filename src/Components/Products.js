@@ -46,35 +46,32 @@ const Products = ({ parentCallback }) => {
 
   const boxSelected = Boxs.find((box) => box.title === boxSelector);
 
-  const ref = useRef(null);
-  // useEffect(() => {
-  //   parentCallback(ref.current.scrollHeight);
-  // });
+  const productRef = useRef();
 
   return (
-    <div ref={ref} className="mx-auto max-w-[1320px] gap-4 p-6 ">
-      <div className="min-w-[50%] justify-center gap-4 md:grid md:grid-cols-2">
+    <div ref={productRef} className="mx-auto gap-4 p-6">
+      <div className="relative min-w-[50%] justify-center gap-4 overflow-y-visible md:grid md:grid-cols-2">
         {/* For larger than mobile screen */}
         <div className="row-span-full mx-[-1rem] mb-4 grid grid-cols-6 [@media(max-width:768px)]:hidden">
-          <figure className="col-span-full justify-center self-center justify-self-center">
+          <figure className="col-span-full  justify-self-center">
             <img
               src={boxSelected.image}
               alt={boxSelected.title}
-              className="min-w-auto w-[480px]"
+              className="aspect-[3/2] w-full object-cover"
             />
           </figure>
-          <div className="flex aspect-square min-w-24 items-center justify-center rounded-lg">
+          <div className="col-span-2 flex aspect-square min-w-24 justify-center rounded-lg">
             <img src={BestBean} alt="Bean" className="max-h-[105px]" />
           </div>
-          <div className="col-start-3 flex aspect-square min-w-24 items-center justify-center rounded-lg">
+          <div className="col-span-2 col-start-3 flex aspect-square min-w-24  justify-center rounded-lg">
             <img src={Spaceman} alt="Spaceman" className="max-h-[105px]" />
           </div>
-          <div className="col-start-5 flex aspect-square min-w-24 items-center justify-center rounded-lg">
+          <div className="col-span-2 col-start-5 flex aspect-square min-w-24 justify-center rounded-lg">
             <img src={Delivery} alt="Cup" className="max-h-[105px]" />
           </div>
         </div>
 
-        <div className="sticky top-20">
+        <div className="sticky top-16 ml-4 mt-4">
           <div className="mb-4">
             <h2 className="mb-2 text-[52px] font-extrabold">
               {boxSelected.title} Roast Box
