@@ -1,6 +1,7 @@
 import React from "react";
-import Products from "../Components/Products";
 import { useParams } from "react-router-dom";
+
+import CuratedBox from "../Components/Products/CuratedBox";
 
 const ProductDetailPage = () => {
   const { productId } = useParams();
@@ -9,7 +10,7 @@ const ProductDetailPage = () => {
   return (
     <div>
       <div className="pt-20">
-        <Products />
+        <CuratedBox />
       </div>
     </div>
   );

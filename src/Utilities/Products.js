@@ -1,55 +1,15 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 
 import BestBean from "../Assets/Products/best-beans.png";
 import Spaceman from "../Assets/Products/spaceman.png";
 import Delivery from "../Assets/Products/delivery.png";
 
-import MixedPackage from "../Assets/Products/MixedPackage.png";
-import LightPackage from "../Assets/Products/LightPackage.png";
-import LightNMediumPackage from "../Assets/Products/LightandMediumPackage.png";
-import MediumPackage from "../Assets/Products/MediumPackage.png";
-import MediumNDarkPackage from "../Assets/Products/MediumandDarkPackage.png";
-import DarkPackage from "../Assets/Products/DarkPackage.png";
+import { bean, check } from "../Assets/icons/icons";
+import ButtonArrow from "./ButtonArrow";
 
-import { check } from "../Assets/icons/icons";
-import ButtonArrow from "../Utilities/ButtonArrow";
-
-const Boxs = [
-  {
-    title: "Mixed",
-    image: MixedPackage,
-  },
-  {
-    title: "Light",
-    image: LightPackage,
-  },
-  {
-    title: "Light & Medium",
-    image: LightNMediumPackage,
-  },
-  {
-    title: "Medium",
-    image: MediumPackage,
-  },
-  {
-    title: "Medium & Dark",
-    image: MediumNDarkPackage,
-  },
-  {
-    title: "Dark",
-    image: DarkPackage,
-  },
-];
-
-const Products = ({ parentCallback }) => {
-  const [boxSelector, setBoxSelector] = useState("Mixed");
-
-  const boxSelected = Boxs.find((box) => box.title === boxSelector);
-
-  const productRef = useRef();
-
+const Products = ({ children, boxSelected }) => {
   return (
-    <div ref={productRef} className="mx-auto gap-4 p-6">
+    <div className="mx-auto gap-4 p-6">
       <div className="relative min-w-[50%] justify-center gap-4 overflow-y-visible md:grid md:grid-cols-2">
         {/* For larger than mobile screen */}
         <div className="row-span-full mx-[-1rem] mb-4 grid grid-cols-6 [@media(max-width:768px)]:hidden">
@@ -104,12 +64,21 @@ const Products = ({ parentCallback }) => {
           </div>
 
           <div className="mb-6">
-            <h3 className="text-base font-extrabold">
+            <ul className="space-y-2">
+              {boxSelected.description.map((des) => (
+                <li>
+                  <i className="mr-2 text-[#f5d577]">{bean}</i>
+                  {des}
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="mt-6 text-base font-extrabold">
               Roasted Level:{" "}
               <span className="text-[#494949]">{boxSelected.title}</span>
             </h3>
 
-            <div className="mb-8 flex gap-2 overflow-scroll p-2 text-white sm:overflow-hidden">
+            {/* <div className="mb-8 flex gap-2 overflow-scroll p-2 text-white sm:overflow-hidden">
               <button
                 onClick={() => setBoxSelector("Mixed")}
                 autoFocus
@@ -169,8 +138,8 @@ const Products = ({ parentCallback }) => {
                   <p className="text-center text-xs font-semibold">Dark</p>
                 </div>
               </button>
-            </div>
-
+            </div> */}
+            {children}
             <div className="max-w-[420px]">
               <div className="mb-2">
                 <form action="#">
