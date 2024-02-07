@@ -1,8 +1,8 @@
 import React from "react";
 
-import BestBean from "../Assets/Products/best-beans.png";
-import Spaceman from "../Assets/Products/spaceman.png";
-import Delivery from "../Assets/Products/delivery.png";
+import BestBean from "../Assets/ProductsUtility/best-beans.png";
+import Spaceman from "../Assets/ProductsUtility/spaceman.png";
+import Delivery from "../Assets/ProductsUtility/delivery.png";
 
 import { bean, check } from "../Assets/icons/icons";
 import ButtonArrow from "./ButtonArrow";
@@ -66,7 +66,7 @@ const Products = ({ children, boxSelected }) => {
           <div className="mb-6">
             <ul className="space-y-2">
               {boxSelected.description.map((des) => (
-                <li>
+                <li key={des}>
                   <i className="mr-2 text-[#f5d577]">{bean}</i>
                   {des}
                 </li>

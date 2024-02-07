@@ -69,7 +69,7 @@ const Navbar = ({ navbarWhite }) => {
       <div
         className={`easy-out fixed left-[50%] z-10 w-[97%] translate-x-[-50%] transition-transform duration-500 ${isTop || isScrollingUp ? "top-[1rem]" : "translate-y-[-100px]"} `}
       >
-        {/* 110px is navbar height; study how to put it in var  */}
+        {/* 110px is navbar height; find how to put it in var  */}
         <div
           className={`${menuOpening && "transition-color duration-500 ease-in-out before:absolute before:-left-5 before:-top-5 before:-z-10 before:h-[110px] before:w-[1400px] before:bg-white"}`}
         ></div>
@@ -142,9 +142,12 @@ const Navbar = ({ navbarWhite }) => {
             {!menuOpening && (
               <div className="flex gap-6 text-white">
                 {/* underline this button !!! */}
-                <button className="hidden font-semibold lg:block ">
+                <Link
+                  to="/products/gift-card"
+                  className="hidden font-semibold lg:block "
+                >
                   Give a Gift
-                </button>
+                </Link>
                 <button className="sm:mr-4">{account}</button>
                 <button className="mr-4">{cart}</button>
               </div>
@@ -170,7 +173,10 @@ const Navbar = ({ navbarWhite }) => {
       />
 
       {/* Menu Navbar Mobile */}
-      <MobileMenuNavbar menuOpening={menuOpening} />
+      <MobileMenuNavbar
+        menuOpening={menuOpening}
+        setMenuOpening={setMenuOpening}
+      />
     </div>
   );
 };
