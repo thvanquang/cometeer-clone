@@ -7,19 +7,42 @@ import Delivery from "../Assets/ProductsUtility/delivery.png";
 import { bean, check } from "../Assets/icons/icons";
 import ButtonArrow from "./ButtonArrow";
 
-const Products = ({ children, boxSelected }) => {
+const Products = ({ children, boxSelected, type }) => {
+  let productSubtitle = "32 Cups Total, 4 Unique Coffees";
+  let productSelectHeader = "Roast Level: ";
+  let typeBox = " Roast Box";
+
+  if (type === "office") {
+    productSubtitle = "240 Capsules Total, 4 Unique Coffees";
+    productSelectHeader = "Box Type: ";
+    typeBox = " Office Box";
+  }
+
+  if (type === "halfNDecaf") {
+    productSubtitle = "32 Capsules Total";
+    productSelectHeader = "Caffeine Level: ";
+    if (boxSelected.title === "Half Caff") {
+      typeBox = "";
+    }
+  }
+
+  if (boxSelected.title === "Mixed") {
+    productSubtitle =
+      "Rotating assortment of 32 capsules of our favorites across all roast levels. Perfect for discovering coffees you love most!";
+  }
   return (
     <div className="mx-auto gap-4 p-6">
       <div className="relative min-w-[50%] justify-center gap-4 overflow-y-visible md:grid md:grid-cols-2">
         {/* For larger than mobile screen */}
-        <div className="row-span-full mx-[-1rem] mb-4 grid grid-cols-6 [@media(max-width:768px)]:hidden">
-          <figure className="col-span-full  justify-self-center">
+        <div className="row-span-full mx-[-1rem] mb-4 grid grid-cols-6 lg:space-y-3 [@media(max-width:768px)]:hidden">
+          <figure className="col-span-full  justify-self-center p-8">
             <img
               src={boxSelected.image}
               alt={boxSelected.title}
               className="aspect-[3/2] w-full object-cover"
             />
           </figure>
+
           <div className="col-span-2 flex aspect-square min-w-24 justify-center rounded-lg">
             <img src={BestBean} alt="Bean" className="max-h-[105px]" />
           </div>
@@ -34,13 +57,9 @@ const Products = ({ children, boxSelected }) => {
         <div className="sticky top-16 ml-4 mt-4">
           <div className="mb-4">
             <h2 className="mb-2 text-[52px] font-extrabold">
-              {boxSelected.title} Roast Box
+              {boxSelected.title + typeBox}
             </h2>
-            <h3 className="text-base">
-              {boxSelected.title === "Mixed"
-                ? "Rotating assortment of 32 capsules of our favorites across all roast levels. Perfect for discovering coffees you love most!"
-                : "32 Cups Total, 4 Unique Coffees"}
-            </h3>
+            <h3 className="text-base">{productSubtitle}</h3>
           </div>
 
           {/* for mobile screen */}
@@ -49,16 +68,16 @@ const Products = ({ children, boxSelected }) => {
               <img
                 src={boxSelected.image}
                 alt={boxSelected.title}
-                className="min-w-auto w-[480px]"
+                className="min-w-auto"
               />
             </figure>
-            <div className="flex aspect-square min-w-24 items-center justify-center rounded-lg">
+            <div className="col-span-2 flex aspect-square min-w-24 justify-center rounded-lg">
               <img src={BestBean} alt="Bean" className="max-h-[105px]" />
             </div>
-            <div className="col-start-3 flex aspect-square min-w-24 items-center justify-center rounded-lg">
+            <div className="col-span-2 col-start-3 flex aspect-square min-w-24 justify-center rounded-lg">
               <img src={Spaceman} alt="Spaceman" className="max-h-[105px]" />
             </div>
-            <div className="col-start-5 flex aspect-square min-w-24 items-center justify-center rounded-lg">
+            <div className="col-span-2 col-start-5 flex aspect-square min-w-24 justify-center rounded-lg">
               <img src={Delivery} alt="Cup" className="max-h-[105px]" />
             </div>
           </div>
@@ -74,71 +93,10 @@ const Products = ({ children, boxSelected }) => {
             </ul>
 
             <h3 className="mt-6 text-base font-extrabold">
-              Roasted Level:{" "}
+              {productSelectHeader}
               <span className="text-[#494949]">{boxSelected.title}</span>
             </h3>
 
-            {/* <div className="mb-8 flex gap-2 overflow-scroll p-2 text-white sm:overflow-hidden">
-              <button
-                onClick={() => setBoxSelector("Mixed")}
-                autoFocus
-                className="relative z-0 h-16 w-16 min-w-16 overflow-hidden rounded-xl border-2 border-white bg-[#8d644c] p-0 outline outline-2 drop-shadow-lg transition-transform ease-out hover:-translate-y-1 focus:outline-black "
-              >
-                <div className="before:absolute  before:left-0 before:top-[50%] before:-z-10 before:aspect-square before:w-full before:bg-[#422513] before:p-4 before:content-['']">
-                  <p className="z-10 flex h-fit w-full items-center justify-center bg-[#633921] py-[2px] text-xs font-semibold">
-                    Mixed
-                  </p>
-                </div>
-              </button>
-              <button
-                onClick={() => setBoxSelector("Light")}
-                className="h-16 w-16 min-w-16 rounded-xl border-2 border-white bg-[#8d644c] p-0 outline outline-2 drop-shadow-lg transition-transform ease-out hover:-translate-y-1 focus:outline-black"
-              >
-                <div>
-                  <p className="text-center text-xs font-semibold">Light</p>
-                </div>
-              </button>
-              <button
-                onClick={() => setBoxSelector("Light & Medium")}
-                className="relative z-0 h-16 w-16 min-w-16 overflow-hidden rounded-xl border-2 border-white bg-[#8d644c] p-0 outline outline-2 drop-shadow-lg transition-transform ease-out hover:-translate-y-1 focus:outline-black"
-              >
-                <div className="before:absolute  before:left-0 before:top-[50%] before:-z-10 before:aspect-square before:w-full before:bg-[#633921] before:p-4 before:content-['']">
-                  <p className="z-10 flex flex-col text-xs font-semibold">
-                    <span>Light</span>
-                    <span>&</span>
-                    <span>Medium</span>
-                  </p>
-                </div>
-              </button>
-              <button
-                onClick={() => setBoxSelector("Medium")}
-                className="h-16 w-16 min-w-16 rounded-xl border-2 border-white bg-[#633921] p-0 outline outline-2 drop-shadow-lg transition-transform ease-out hover:-translate-y-1 focus:outline-black"
-              >
-                <div>
-                  <p className="text-center text-xs font-semibold">Medium</p>
-                </div>
-              </button>
-              <button
-                onClick={() => setBoxSelector("Medium & Dark")}
-                className="relative z-0 h-16 w-16 min-w-16 overflow-hidden rounded-xl border-2 border-white bg-[#633921] p-0 outline outline-2 drop-shadow-lg transition-transform ease-out hover:-translate-y-1 focus:outline-black"
-              >
-                <div className="before:absolute  before:left-0 before:top-[50%] before:-z-10 before:aspect-square before:w-full before:bg-[#422513] before:p-4 before:content-['']">
-                  <p className="z-10 flex flex-col text-xs font-semibold">
-                    <span>Medium</span>
-                    <span>&</span>
-                    <span>Dark</span>
-                  </p>
-                </div>
-              </button>
-              <button
-                onClick={() => setBoxSelector("Dark")}
-                className="h-16 w-16 min-w-16 rounded-xl border-2 border-white bg-[#422513] p-0 outline outline-2 drop-shadow-lg transition-transform ease-out hover:-translate-y-1 focus:outline-black"
-              >
-                <div>
-                  <p className="text-center text-xs font-semibold">Dark</p>
-                </div>
-              </button>
-            </div> */}
             {children}
             <div className="max-w-[420px]">
               <div className="mb-2">

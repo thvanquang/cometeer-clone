@@ -6,6 +6,7 @@ import HomePage from "./Pages/Home";
 import ErrorPage from "./Pages/Error";
 import ProductsRootLayout from "./Pages/ProductsRoot";
 import ProductDetailPage from "./Pages/ProductDetail";
+import OfficeBox from "./Components/Products/OfficeBox";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
         path: "products",
         element: <ProductsRootLayout />,
         children: [{ path: ":productId", element: <ProductDetailPage /> }],
+      },
+      {
+        path: "products/office-box-1",
+        element: <OfficeBox />,
       },
     ],
   },

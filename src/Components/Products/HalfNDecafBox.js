@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import HalfCaff from "../../Assets/HalfNDecafBox/HalfCaff.png";
-import Decaf from "../../Assets/HalfNDecafBox/DecafPackage.png";
+import Decaf from "../../Assets/HalfNDecafBox/Decaf.png";
 import Products from "../../Utilities/Products";
 
 const BOXS = [
@@ -28,8 +28,8 @@ const HalfNDecafBox = () => {
 
   const boxSelected = BOXS.find((box) => box.title === boxSelector);
   return (
-    <Products boxSelected={boxSelected}>
-      <div className="mb-8 flex gap-2 overflow-scroll p-2 text-white sm:overflow-hidden">
+    <Products type={"halfNDecaf"} boxSelected={boxSelected}>
+      <div className="mb-8 flex gap-2 overflow-hidden p-2 text-white">
         <button
           onClick={() => setBoxSelector("Decaf")}
           className="h-16 w-16 min-w-16 rounded-xl border-2 border-white bg-black p-0 outline outline-2 drop-shadow-lg transition-transform ease-out hover:-translate-y-1 focus:outline-black"
