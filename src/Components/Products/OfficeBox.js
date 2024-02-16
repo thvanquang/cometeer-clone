@@ -108,6 +108,11 @@ const OfficeBox = () => {
       setIsScrollingUp(false);
     }
 
+    // !!! hardcode
+    if (window.innerWidth >= 1024) {
+      setCurrentSlide(0);
+    }
+
     setPrevScrollPosition(currentScrollPosition);
   }, [prevScrollPosition]);
 
@@ -333,7 +338,7 @@ const OfficeBox = () => {
       {/* Get in touch */}
       {/* Cometeer not complete this yet */}
       <Element name="">
-        <div className="mt-10 flex flex-col-reverse gap-10 p-6 lg:flex-row lg:p-20">
+        <div className="mt-10 flex flex-col-reverse gap-10 p-6 lg:flex-row lg:p-16">
           <div className="space-y-4 lg:w-1/2">
             <h1 className="text-4xl font-bold lg:flex lg:flex-col lg:text-5xl">
               <span>To learn more, </span>
@@ -344,17 +349,17 @@ const OfficeBox = () => {
               culture and productivity.
             </p>
             <button className="group flex items-center justify-between gap-2 rounded-full bg-[#f5d577] hover:bg-black">
-              <p className="px-8 py-4 text-lg font-semibold hover:text-white">
+              <p className="px-8 py-4 text-xl font-semibold group-hover:text-white">
                 Contact Us
               </p>
-              <i className="relative mr-3 flex items-center overflow-hidden rounded-full bg-white p-2 ">
+              <i className="relative mr-3 flex items-center overflow-hidden rounded-full bg-white p-2 text-black ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="absolute -left-[20px] h-5 w-5 text-black transition-transform duration-300  ease-in-out group-hover:translate-x-[27px]"
+                  className="absolute -left-[20px] h-5 w-5  transition-transform duration-300  ease-in-out group-hover:translate-x-[27px]"
                 >
                   <path
                     strokeLinecap="round"
@@ -369,7 +374,7 @@ const OfficeBox = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="h-5 w-5 text-black transition-transform duration-300  ease-in-out group-hover:translate-x-[100px]"
+                  className="h-5 w-5 transition-transform duration-300  ease-in-out group-hover:translate-x-[100px]"
                 >
                   <path
                     strokeLinecap="round"

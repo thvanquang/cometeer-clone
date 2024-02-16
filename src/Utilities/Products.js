@@ -98,6 +98,7 @@ const Products = ({ children, boxSelected, type }) => {
             </h3>
 
             {children}
+
             <div className="max-w-[420px]">
               <div className="mb-2">
                 <form action="#">

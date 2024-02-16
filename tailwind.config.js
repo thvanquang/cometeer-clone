@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      spacing: {
+        navbar: "110px",
+      },
       keyframes: {
         "transition-right": {
           "0%, 100%": { transform: "translateX(0px)" },

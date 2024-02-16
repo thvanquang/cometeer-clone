@@ -65,24 +65,23 @@ const Navbar = ({ navbarWhite }) => {
     setIsScrollingUp(true);
   };
   return (
-    <div className="relative">
+    <div className="h-navbar relative bg-white">
       <div
         className={`easy-out fixed left-[50%] z-10 w-[97%] translate-x-[-50%] transition-transform duration-500 ${isTop || isScrollingUp ? "top-[1rem]" : "translate-y-[-100px]"} `}
       >
-        {/* 110px is navbar height; find how to put it in var  */}
         <div
-          className={`${menuOpening && "transition-color duration-500 ease-in-out before:absolute before:-left-5 before:-top-5 before:-z-10 before:h-[110px] before:w-[1400px] before:bg-white"}`}
+          className={`${menuOpening && "transition-color before:h-navbar duration-500 ease-in-out before:absolute before:-left-5 before:-top-5 before:-z-10 before:w-[1400px] before:bg-white"}`}
         ></div>
         <div
           className={`mx-auto grid min-w-full grid-cols-[1fr_auto_1fr] items-center justify-between rounded-full p-4 transition-colors duration-500 ease-in-out ${isTop ? "bg-transparent" : "bg-[#2c2b2b]"} ${isTop && menuOpening && "bg-white"}`}
         >
           <div>
             {/* Larger than Mobile screen */}
-            <div className="ml-1 hidden items-center text-white lg:flex lg:gap-8">
+            <div className="ml-1 hidden items-center lg:flex lg:gap-8">
               <button
                 onMouseEnter={() => setTryCometeerShowing(true)}
                 onMouseLeave={() => setTryCometeerShowing(false)}
-                className="z-20 flex items-center gap-2 rounded-full border-[1px] bg-[white] px-6 py-[2px] text-[#2c2b2b] hover:border-white hover:bg-[#2c2b2b] hover:text-white"
+                className={`easy-in-out z-20 flex items-center gap-2 rounded-full border-[1px] border-transparent px-6 py-[2px]  transition-colors duration-500   ${isTop ? "bg-[#2c2b2b] text-white hover:border-[#a0a0a0] hover:bg-[#f3f5e8] hover:text-[#2c2b2b]" : "bg-white text-[#2c2b2b] hover:border-white hover:bg-[#2c2b2b] hover:text-white"}`}
               >
                 <p className="text-lg font-semibold">Try Cometeer</p>
                 <i className={`${tryCometeerShowing ? "rotate-180" : ""}`}>
@@ -101,7 +100,7 @@ const Navbar = ({ navbarWhite }) => {
               <button
                 onMouseEnter={() => setLearnShowing(true)}
                 onMouseLeave={() => setLearnShowing(false)}
-                className="z-20 flex items-center gap-2 rounded-full px-6 py-[2px] hover:border-[1px] hover:border-white hover:bg-[#2c2b2b]"
+                className={`z-20 flex items-center gap-2 rounded-full border-[1px] border-transparent px-6 py-[2px] transition-colors duration-500 ease-in-out ${isTop ? "hover:border-[#a0a0a0] hover:bg-[#f3f5e8]" : "text-white hover:border-white hover:bg-[#2c2b2b]"}`}
               >
                 <p className="text-lg font-semibold"> Learn</p>
                 <i className={`${learnShowing ? "rotate-180" : ""}`}>
@@ -121,7 +120,7 @@ const Navbar = ({ navbarWhite }) => {
             {/* Mobile screen */}
             <button
               onClick={menuIconClickHandler}
-              className={`ml-2 flex items-center lg:hidden ${menuOpening && "cursor-default"} ${!isTop && menuOpening ? "text-[#2c2b2b]" : "text-white"}`}
+              className={`ml-2 flex items-center lg:hidden ${menuOpening && "cursor-default"} ${isTop ? (menuOpening ? "text-white" : "text-[#2c2b2b]") : menuOpening ? "text-[#2c2b2b]" : "text-white"}`}
             >
               {bar}
             </button>
@@ -130,7 +129,7 @@ const Navbar = ({ navbarWhite }) => {
           {/* put a link !!! */}
           <Link to="/" className="z-20">
             <img
-              src={isTop && menuOpening ? Logo : LogoWhite}
+              src={isTop ? Logo : LogoWhite}
               alt="logo"
               width="182"
               height="40"
@@ -140,7 +139,9 @@ const Navbar = ({ navbarWhite }) => {
 
           <div className="content-center justify-self-end ">
             {!menuOpening && (
-              <div className="flex gap-6 text-white">
+              <div
+                className={`flex gap-6 ${isTop ? "text-[#2c2b2b]" : "text-white"}`}
+              >
                 {/* underline this button !!! */}
                 <Link
                   to="/products/gift-card"
