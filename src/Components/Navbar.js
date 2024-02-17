@@ -65,12 +65,12 @@ const Navbar = ({ navbarWhite }) => {
     setIsScrollingUp(true);
   };
   return (
-    <div className="h-navbar relative bg-white">
+    <div className="relative h-navbar bg-white">
       <div
         className={`easy-out fixed left-[50%] z-10 w-[97%] translate-x-[-50%] transition-transform duration-500 ${isTop || isScrollingUp ? "top-[1rem]" : "translate-y-[-100px]"} `}
       >
         <div
-          className={`${menuOpening && "transition-color before:h-navbar duration-500 ease-in-out before:absolute before:-left-5 before:-top-5 before:-z-10 before:w-[1400px] before:bg-white"}`}
+          className={`${menuOpening && "transition-color duration-500 ease-in-out before:absolute before:-left-5 before:-top-5 before:-z-10 before:h-navbar before:w-[1400px] before:bg-white"}`}
         ></div>
         <div
           className={`mx-auto grid min-w-full grid-cols-[1fr_auto_1fr] items-center justify-between rounded-full p-4 transition-colors duration-500 ease-in-out ${isTop ? "bg-transparent" : "bg-[#2c2b2b]"} ${isTop && menuOpening && "bg-white"}`}
@@ -142,10 +142,9 @@ const Navbar = ({ navbarWhite }) => {
               <div
                 className={`flex gap-6 ${isTop ? "text-[#2c2b2b]" : "text-white"}`}
               >
-                {/* underline this button !!! */}
                 <Link
                   to="/products/gift-card"
-                  className="hidden font-semibold lg:block "
+                  className={`relative hidden pr-1 font-semibold after:absolute after:bottom-[-5px] after:left-0 after:h-[1px] after:w-0 after:transition-all  after:duration-300 after:ease-in-out hover:after:w-full lg:block ${isTop ? "after:bg-[#2b2c2c]" : "after:bg-white"}`}
                 >
                   Give a Gift
                 </Link>

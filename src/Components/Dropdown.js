@@ -134,7 +134,7 @@ const Dropdown = ({
             {TryCometeerDropdown.map((section) => (
               <ul
                 key={section.id}
-                className={` flex-wrap justify-start gap-4 ${sectionSelected === section.id ? "flex" : "hidden"}`}
+                className={`flex-wrap justify-start gap-4 ${sectionSelected === section.id ? "flex" : "hidden"}`}
               >
                 {section.items.map((item) => (
                   <Link

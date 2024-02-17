@@ -7,7 +7,7 @@ import Delivery from "../../Assets/ProductsUtility/delivery.png";
 
 const GiftCard = () => {
   return (
-    <div className="mx-auto gap-4 p-6">
+    <div className="mx-auto gap-4 px-6 py-10">
       <div className="relative min-w-[50%] justify-center gap-4 overflow-y-visible md:grid md:grid-cols-2">
         {/* For larger than mobile screen */}
         <div className="row-span-full mx-[-1rem] mb-4 grid grid-cols-6 lg:space-y-3 [@media(max-width:768px)]:hidden">
@@ -70,6 +70,7 @@ const GiftCard = () => {
           </div>
 
           <div className="mt-6 flex w-[70%] flex-col gap-4">
+            {/* FIXME */}
             <label>
               <span className="aspect-square rounded-full border-2 border-black p-2">
                 V

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 
 import { Link as LinkScroll } from "react-scroll";
+import { useInView } from "react-intersection-observer";
 
 import classes from "./ProductNavbar.module.css";
 
@@ -30,20 +31,32 @@ const NAVBAR_ITEMS = [
 const ProductNavbar = () => {
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [prevScrollPosition, setPrevScrollPosition] = useState(window.scrollY);
-
+  const [fixedNavbar, setFixedNavbar] = useState(false);
   const [activedLink, setActivedLink] = useState(0);
+
+  const { ref: intersectionRef } = useInView({
+    threshold: 0,
+    onChange: (inView) => {
+      // khi scroll xuống qua khỏi ProductNavbar thì mới bắt đầu fixed
+      if (!isScrollingUp && !inView) {
+        setFixedNavbar(true);
+      }
+    },
+  });
 
   const handleScroll = useCallback(() => {
     const currentScrollPosition = window.scrollY;
-
     if (currentScrollPosition < prevScrollPosition) {
       setIsScrollingUp(true);
     } else {
       setIsScrollingUp(false);
     }
-
     setPrevScrollPosition(currentScrollPosition);
-  }, [prevScrollPosition]);
+
+    if (isScrollingUp) {
+      setFixedNavbar(false);
+    }
+  }, [prevScrollPosition, isScrollingUp]);
 
   const setActivedHandler = (i) => {
     if (window.innerWidth >= 900) {
@@ -55,7 +68,6 @@ const ProductNavbar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     window.addEventListener("resize", setActivedHandler);
 
     return () => {
@@ -64,9 +76,12 @@ const ProductNavbar = () => {
     };
   }, [handleScroll]);
 
+  //
+
   return (
     <div
-      className={`z-20 w-screen overflow-hidden bg-[#f7eabc] p-8 ${!isScrollingUp && "fixed top-0"}`}
+      ref={intersectionRef}
+      className={`z-20 w-screen overflow-hidden bg-[#f7eabc] p-8  ${fixedNavbar && !isScrollingUp && "fixed top-0"}`}
     >
       <div
         className="flex min-w-full flex-nowrap gap-4 transition-transform duration-300 ease-in"
