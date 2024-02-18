@@ -1,15 +1,15 @@
 .background {
-  background-color: #f7eabc;
+  background-color: #f7f0d3;
   background-image: repeating-linear-gradient(
       90deg,
-      #d9cca3 0,
-      #d9cca3 1px,
+      #e1dbc1 0,
+      #e1dbc1 1px,
       transparent 1px,
       transparent 6rem
     ),
     repeating-linear-gradient(
-      #d9cca3 0,
-      #d9cca3 1px,
+      #e1dbc1 0,
+      #e1dbc1 1px,
       transparent 1px,
       transparent 4rem
     );
