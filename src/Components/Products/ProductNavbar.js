@@ -39,8 +39,10 @@ const ProductNavbar = () => {
     onChange: (inView) => {
       // khi scroll xuống qua khỏi ProductNavbar thì mới bắt đầu fixed
       // khi scroll lên, Navbar bị ẩn đi, inView cũng chuyển thành false...
-
       console.log(inView);
+      if (prevScrollPosition === 0) {
+        return;
+      }
 
       if (!isScrollingUp && !inView) {
         setFixedNavbar(true);
