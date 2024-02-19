@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Element } from "react-scroll";
 
-import { plus } from "../../Assets/icons/icons";
+import { plus } from "../Assets/icons/icons";
 
 const FAQS = [
   {

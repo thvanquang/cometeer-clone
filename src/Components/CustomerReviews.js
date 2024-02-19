@@ -1,12 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Element } from "react-scroll";
 
-import {
-  chevronDown,
-  coffeeBean,
-  fiveCoffeeBean,
-} from "../../Assets/icons/icons";
-import Reviews from "./Reviews";
+import { chevronDown, coffeeBean, fiveCoffeeBean } from "../Assets/icons/icons";
+import Reviews from "./Products/Reviews";
 
 const FILTERS = [
   ["Bitternes", "Taste", "Strength", "Feelings", "Fit", "Smell", "..."],

@@ -10,11 +10,9 @@ const ProductDetailPage = () => {
 
   return (
     <div>
-      <div>
-        {productId === "mixed-roast-box" && <CuratedBox />}
-        {productId === "half-caff-box" && <HalfNDecafBox />}
-        {productId === "gift-card" && <GiftCard />}
-      </div>
+      {productId === "mixed-roast-box" && <CuratedBox />}
+      {productId === "half-caff-box" && <HalfNDecafBox />}
+      {productId === "gift-card" && <GiftCard />}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { arrow, stars } from "../../Assets/icons/icons";
+import { arrow, stars } from "../Assets/icons/icons";
 
 const REVIEWS = [
   {

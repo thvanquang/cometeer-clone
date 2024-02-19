@@ -22,19 +22,19 @@ const TryCometeerDropdown = [
         title: "Curated Box",
         content: "The best variety of our curated coffees. Try them all!",
         image: CuratedBox,
-        urlAddress: "mixed-roast-box",
+        urlAddress: "/products/mixed-roast-box",
       },
       {
         title: "Half Caff & Decaf Box",
         content: "Want less caffeine and more coffee? This box is for you.",
         image: HalfnDecafBox,
-        urlAddress: "half-caff-box",
+        urlAddress: "/products/half-caff-box",
       },
       {
         title: "Roaster Boxes",
         content: "Love a specific Roaster? Shop all here!",
         image: RoasterBox,
-        urlAddress: "intelligentsia-box",
+        urlAddress: "/roasters/houseplant-box-1",
       },
     ],
   },
@@ -46,7 +46,7 @@ const TryCometeerDropdown = [
         title: "Office Box",
         content: "Experience the ultimate office coffee service with Cometeer.",
         image: OfficeBox,
-        urlAddress: "office-box-1",
+        urlAddress: "/products/office-box-1",
       },
     ],
   },
@@ -58,7 +58,7 @@ const TryCometeerDropdown = [
         title: "Give a Gift",
         content: "Make any coffee lover melt with the gift of Cometeer.",
         image: Gift,
-        urlAddress: "gift-card",
+        urlAddress: "/products/gift-card",
       },
       {
         title: "Accessories",
@@ -139,11 +139,7 @@ const Dropdown = ({
                 {section.items.map((item) => (
                   <Link
                     key={item.title}
-                    to={
-                      item.title === "Accessories"
-                        ? item.urlAddress
-                        : `/products/${item.urlAddress}`
-                    }
+                    to={item.urlAddress}
                     className="flex h-[140px] w-[410px] items-center gap-4 rounded-lg border-[1px] border-[#c1bdb0] bg-[#e3dcc2] p-4 hover:border-2 hover:border-[#1a1a1a]"
                   >
                     <div className="flex aspect-square w-[100px] items-center">
