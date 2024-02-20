@@ -67,7 +67,7 @@ const Navbar = ({ navbarWhite }) => {
   return (
     <div className="relative h-navbar bg-white">
       <div
-        className={`easy-out fixed left-[50%] z-10 w-[97%] translate-x-[-50%] transition-transform duration-500 ${isTop || isScrollingUp ? "top-[1rem]" : "translate-y-[-100px]"} `}
+        className={`easy-out fixed left-[50%] z-20 w-[97%] translate-x-[-50%] transition-transform duration-500 ${isTop || isScrollingUp ? "top-[1rem]" : "translate-y-[-100px]"} `}
       >
         <div
           className={`${menuOpening && "transition-color duration-500 ease-in-out before:absolute before:-left-5 before:-top-5 before:-z-10 before:h-navbar before:w-[1400px] before:bg-white"}`}

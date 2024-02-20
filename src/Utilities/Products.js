@@ -7,7 +7,7 @@ import Delivery from "../Assets/ProductsUtility/delivery.png";
 import { bean, check } from "../Assets/icons/icons";
 import ButtonArrow from "./ButtonArrow";
 
-const Products = ({ children, boxSelected, type }) => {
+const Products = ({ children, boxSelected, type, soldout }) => {
   let productSubtitle = "32 Cups Total, 4 Unique Coffees";
   let productSelectHeader = "Roast Level: ";
   let typeBox = " Roast Box";
@@ -63,7 +63,7 @@ const Products = ({ children, boxSelected, type }) => {
           </div>
 
           {/* for mobile screen */}
-          <div className="mx-[-1rem] mb-4 grid grid-cols-6 md:hidden">
+          <div className="mx-[-1rem] grid grid-cols-6 md:hidden">
             <figure className="col-span-full justify-center self-center justify-self-center">
               <img
                 src={boxSelected.image}

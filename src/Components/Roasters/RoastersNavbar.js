@@ -64,7 +64,8 @@ const ROASTERS = [
 ];
 
 const RoastersNavbar = () => {
-  const [isScrollingUp, setIsScrollingUp] = useState(false);
+  // set isScrollingUp initial is true for navbar first load page not fixed
+  const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [prevScrollPosition, setPrevScrollPosition] = useState(window.scrollY);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -79,6 +80,7 @@ const RoastersNavbar = () => {
 
   const handleScroll = useCallback(() => {
     const currentScrollPosition = window.scrollY;
+
     if (currentScrollPosition < prevScrollPosition) {
       setIsScrollingUp(true);
     } else {
@@ -102,7 +104,7 @@ const RoastersNavbar = () => {
       </h1>
 
       <div
-        className={`z-20 mt-4  bg-[#f7f0d3] bg-opacity-0 px-14 transition duration-500 ease-in-out ${!isScrollingUp ? "fixed left-0 top-0 mt-0 w-full bg-opacity-100 px-24" : "relative"}`}
+        className={`z-10 bg-[#f7f0d3] bg-opacity-0 px-14 transition duration-500 ease-in-out ${!isScrollingUp ? "fixed left-0 top-0 mt-0 w-full bg-opacity-100 px-24" : "relative mt-4"}`}
       >
         <div
           className={`overflow-hidden pb-6 pt-2 ${!isScrollingUp && "relative"}`}
