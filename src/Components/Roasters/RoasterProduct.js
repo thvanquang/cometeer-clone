@@ -1,13 +1,13 @@
 import React from "react";
 
-import ButtonArrow from "./ButtonArrow";
+import ButtonArrow from "../../Utilities/ButtonArrow";
 
 const RoasterProduct = ({ roasterSelected }) => {
   const productSubtitle = "32 Cups Total, 2 Unique Coffees";
 
   return (
-    <div className="mx-auto gap-4 p-6">
-      <div className="relative min-w-[50%] justify-center gap-4 overflow-y-visible md:grid md:grid-cols-2">
+    <div className="mx-auto mt-8 gap-4 p-6">
+      <div className="relative min-w-[50%] justify-center gap-8 overflow-y-visible md:grid md:grid-cols-2">
         {/* For larger than mobile screen */}
         <div className="row-span-full mx-[-1rem] mb-4 [@media(max-width:768px)]:hidden">
           <figure className="col-span-full  justify-self-center p-8">
@@ -40,7 +40,7 @@ const RoasterProduct = ({ roasterSelected }) => {
 
           <div className="mb-6">
             {roasterSelected.imageListStyle ? (
-              <div className="mt-20">
+              <div className="mb-12 mt-20">
                 <p className="uppercase tracking-wide">Included in your box:</p>
                 <ul className="space-y-2">
                   {roasterSelected.productDescription.map((des) => (
@@ -59,10 +59,10 @@ const RoasterProduct = ({ roasterSelected }) => {
                 </ul>
               </div>
             ) : (
-              <div>{roasterSelected.productDescription}</div>
+              <div className="mt-12">{roasterSelected.productDescription}</div>
             )}
 
-            <div className="mt-12 max-w-[420px]">
+            <div className="mt-4 max-w-[420px]">
               <div className="mb-2">
                 <form action="#">
                   <ButtonArrow
