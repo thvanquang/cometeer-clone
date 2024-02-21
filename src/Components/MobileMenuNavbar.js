@@ -29,7 +29,7 @@ const MenuMobile = [
         title: "Roaster Boxes",
         content: "Love a specific Roaster? Shop all here!",
         image: RoasterBox,
-        urlAddress: "/products/houseplant-box-1",
+        urlAddress: "/roasters/houseplant-box-1",
       },
     ],
   },

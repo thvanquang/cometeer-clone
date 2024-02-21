@@ -9,6 +9,9 @@ import ProductDetailPage from "./Pages/ProductDetail";
 import OfficeBox from "./Components/Products/OfficeBox";
 import RoastersRootLayout from "./Pages/RoastersRoot";
 import RoasterDetailPage from "./Pages/RoasterDetail";
+import LearnOurStoryPage from "./Pages/LearnOurStory";
+import LearnHowItWorksPage from "./Pages/LearnHowItWorks";
+import LearnSustainabilityPage from "./Pages/LearnSustainability";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +33,23 @@ const router = createBrowserRouter([
         path: "roasters",
         element: <RoastersRootLayout />,
         children: [{ path: ":roasterId", element: <RoasterDetailPage /> }],
+      },
+      {
+        path: "pages",
+        children: [
+          {
+            path: "our-story",
+            element: <LearnOurStoryPage />,
+          },
+          {
+            path: "how-it-works",
+            element: <LearnHowItWorksPage />,
+          },
+          {
+            path: "sustainability",
+            element: <LearnSustainabilityPage />,
+          },
+        ],
       },
     ],
   },

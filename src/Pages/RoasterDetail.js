@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import { ROASTERS } from "../Components/Roasters/roasterInformation";
+import { ROASTERS } from "../Components/Roasters/roaster-information";
 
 import RoasterProduct from "../Components/Roasters/RoasterProduct";
 import RoasterDescriptions from "../Components/Roasters/RoasterDescriptions";

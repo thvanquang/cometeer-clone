@@ -5,14 +5,7 @@ import { useInView } from "react-intersection-observer";
 
 import { arrow } from "../Assets/icons/icons";
 
-import Feature0 from "../Assets/ProductWhatYouGet/icon-0.png";
-import Feature0hover from "../Assets/ProductWhatYouGet/icon-0-hover.png";
-import Feature1 from "../Assets/ProductWhatYouGet/icon-1.png";
-import Feature1hover from "../Assets/ProductWhatYouGet/icon-1-hover.png";
-import Feature2 from "../Assets/ProductWhatYouGet/icon-2.png";
-import Feature2hover from "../Assets/ProductWhatYouGet/icon-2-hover.png";
-import Feature3 from "../Assets/ProductWhatYouGet/icon-3.png";
-import Feature3hover from "../Assets/ProductWhatYouGet/icon-3-hover.png";
+import CapsuleEcosystem from "./CapsuleEcosystem";
 
 const WHAT_YOU_GET = [
   {
@@ -34,37 +27,6 @@ const WHAT_YOU_GET = [
     content: "No machine required - just melt and enjoy the perfect.",
     srcVideo:
       "https://cdn.shopify.com/videos/c/o/v/8c192d1221da4b4d9b53d99c2bdaccba.webm",
-  },
-];
-
-const PRODUCT_FEATURES = [
-  {
-    title: "100% COMPOSTED GROUNDS",
-    content:
-      "We send all spent grinds from our factory to local composting farms.",
-    image: Feature0,
-    imageHover: Feature0hover,
-  },
-  {
-    title: "LESS FOOD WASTE",
-    content:
-      "Cometeer has a 3 year shelf life. No more waste from stale beans, poor brewing, or pouring out leftover cold coffee pots.",
-    image: Feature1,
-    imageHover: Feature1hover,
-  },
-  {
-    title: "NO GROUNDS IN OUR CAPSULES",
-    content:
-      "Our capsules contain brewed and flash frozen coffee extract which means no grounds to rinse in order to recycle!",
-    image: Feature2,
-    imageHover: Feature2hover,
-  },
-  {
-    title: "RECYCLABLE MATERIAL",
-    content:
-      "Our aluminum capsule and shipping materials are all curbside recyclable. Even the lids!",
-    image: Feature3,
-    imageHover: Feature3hover,
   },
 ];
 
@@ -108,14 +70,13 @@ const ProductWhatYouGet = () => {
 
   return (
     <Element name="what-in-your-order">
-      <div
-        ref={intersectionRef}
-        onClick={videoToggleHandler()}
-        className="z-0 w-full p-8"
-      >
+      <div onClick={videoToggleHandler()} className="z-0 w-full p-8">
         <h1 className="mb-8 text-3xl font-bold">What's in Your Order</h1>
 
-        <div className="relative w-full overflow-hidden rounded-2xl border border-[#a0a0a0] bg-[#f7f0d3] px-4 py-8">
+        <div
+          ref={intersectionRef}
+          className="relative w-full overflow-hidden rounded-2xl border border-[#a0a0a0] bg-[#f7f0d3] px-4 py-8"
+        >
           <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -161,8 +122,8 @@ const ProductWhatYouGet = () => {
               <div className="flex h-[2px] w-full items-center bg-[#2b2c2c] opacity-10"></div>
               <div
                 className="absolute -top-[25%] h-[3px] w-1/3 bg-[#2b2c2c] transition-transform duration-300 ease-in"
-                style={{ transform: `translateX(${currentSlide * 100}%)` }}
                 // this 1/3 is hardcode ;__;
+                style={{ transform: `translateX(${currentSlide * 100}%)` }}
               ></div>
             </div>
 
@@ -175,32 +136,8 @@ const ProductWhatYouGet = () => {
           </div>
         </div>
 
-        {/* Product features */}
-        <div className="my-8 grid grid-cols-2 justify-center gap-4 lg:flex">
-          {PRODUCT_FEATURES.map((section) => (
-            <div
-              key={section.title}
-              className="group w-full space-y-3 p-8 text-center"
-            >
-              <div className="relative mx-auto h-[3.125rem] w-[3.125rem]">
-                <img
-                  src={section.image}
-                  alt={section.title}
-                  className="transition-opacity duration-500 ease-in-out group-hover:opacity-0"
-                />
-                <img
-                  src={section.imageHover}
-                  alt={section.title}
-                  className="absolute top-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
-                />
-              </div>
-              <h2 className="mx-auto w-[80%] text-xl font-bold uppercase">
-                {section.title}
-              </h2>
-              <p>{section.content}</p>
-            </div>
-          ))}
-        </div>
+        {/* Capsule features */}
+        <CapsuleEcosystem />
       </div>
     </Element>
   );
