@@ -75,23 +75,27 @@ const LearnDropdown = [
     title: "Our Story",
     content: "We are making coffee better so you can make your coffee better.",
     image: OurStory,
+    urlAddress: "/pages/our-story",
   },
   {
-    title: "How it Work",
+    title: "How it Works",
     content:
       "We're creating a new kind of ritual in coffee. It's called melting.",
     image: HowItWork,
+    urlAddress: "/pages/how-it-works",
   },
   {
     title: "Sustainability",
     content: "Our process is uniquely suited to reducing waste, at every step.",
     image: Sustainability,
+    urlAddress: "/pages/sustainability",
   },
   {
     title: "Roasters",
     content:
       "We work with world renowned coffee roasters. Let us introduce you!",
     image: OurRoasters,
+    urlAddress: "/roasters/houseplant-box-1",
   },
 ];
 
@@ -105,6 +109,11 @@ const Dropdown = ({
 
   const mouseEnterHandler = (id) => {
     setSectionSelected(id);
+  };
+
+  const clickHandler = () => {
+    setTryCometeerShowing(false);
+    setLearnShowing(false);
   };
 
   return (
@@ -140,6 +149,7 @@ const Dropdown = ({
                   <Link
                     key={item.title}
                     to={item.urlAddress}
+                    onClick={clickHandler}
                     className="flex h-[140px] w-[410px] items-center gap-4 rounded-lg border-[1px] border-[#c1bdb0] bg-[#e3dcc2] p-4 hover:border-2 hover:border-[#1a1a1a]"
                   >
                     <div className="flex aspect-square w-[100px] items-center">
@@ -169,8 +179,10 @@ const Dropdown = ({
       >
         <div className="flex gap-6 p-4">
           {LearnDropdown.map((section) => (
-            <div
+            <Link
               key={section.title}
+              to={section.urlAddress}
+              onClick={clickHandler}
               className="transition-opacity duration-300 ease-in-out hover:opacity-80"
             >
               <img
@@ -182,7 +194,7 @@ const Dropdown = ({
                 <h1 className="mb-4 text-3xl font-bold">{section.title}</h1>
                 <p className="text-sm">{section.content}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Link as LinkScroll, Element } from "react-scroll";
+import { useInView } from "react-intersection-observer";
 
 import Products from "../../Utilities/Products";
 import FullHalfDecaf from "../../Assets/OfficeBox/full-half-decaf.png";
@@ -88,10 +89,10 @@ const OfficeBox = () => {
   // Product
   const [boxSelector, setBoxSelector] = useState("Full, Half, & Decaf");
   const boxSelected = BOXS.find((box) => box.title === boxSelector);
-
   // Navbar Handler
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [prevScrollPosition, setPrevScrollPosition] = useState(window.scrollY);
+  const [fixedNavbar, setFixedNavbar] = useState(false);
   const [activedLink, setActivedLink] = useState(0);
 
   // Elements
@@ -99,6 +100,24 @@ const OfficeBox = () => {
 
   //// Handler
   // Navbar
+  const { ref: navbarRef } = useInView({
+    threshold: 0,
+    onChange: (inView) => {
+      console.log(inView);
+      if (prevScrollPosition === 0) {
+        return;
+      }
+
+      if (!isScrollingUp && !inView) {
+        setFixedNavbar(true);
+      }
+
+      if (isScrollingUp && !inView) {
+        setFixedNavbar(false);
+      }
+    },
+  });
+
   const handleScroll = useCallback(() => {
     const currentScrollPosition = window.scrollY;
 
@@ -148,7 +167,7 @@ const OfficeBox = () => {
   }, [handleScroll]);
 
   return (
-    <div>
+    <div className={classes.background}>
       <Products type={"office"} boxSelected={boxSelected}>
         <div className="mb-8 flex gap-2 overflow-hidden p-2 text-white">
           <button
@@ -247,30 +266,34 @@ const OfficeBox = () => {
       </Products>
 
       {/* Navbar */}
-      <div
-        className={`z-20 w-screen overflow-hidden bg-[#f7eabc] p-6 ${!isScrollingUp && "fixed top-0"}`}
-      >
+
+      <div>
+        <div ref={navbarRef} className="w-screen bg-transparent p-8"></div>
         <div
-          className="flex min-w-full flex-nowrap gap-4 transition-transform duration-300 ease-in"
-          style={{
-            transform: `translateX(-${(activedLink <= 2 ? activedLink : 2) * 20}%)`,
-          }}
+          className={`z-20 w-screen overflow-hidden bg-[#f7f0d3] p-6 ${fixedNavbar && !isScrollingUp && "fixed top-0"}`}
         >
-          {NAVBAR_ITEMS.map((item, i) => (
-            <LinkScroll
-              key={item.name}
-              activeClass={classes.active}
-              onSetActive={() => setActivedHandler(i)}
-              spy={true}
-              smooth={true}
-              duration={500}
-              offset={-20}
-              className="min-w-fit rounded-full border-[1px] border-black px-5 py-2 uppercase hover:bg-[#f5d577] hover:text-[#2b2c2c] lg:py-2"
-              to={item.address}
-            >
-              {item.name}
-            </LinkScroll>
-          ))}
+          <div
+            className="flex min-w-full flex-nowrap gap-4 transition-transform duration-300 ease-in"
+            style={{
+              transform: `translateX(-${(activedLink <= 2 ? activedLink : 2) * 20}%)`,
+            }}
+          >
+            {NAVBAR_ITEMS.map((item, i) => (
+              <LinkScroll
+                key={item.name}
+                activeClass={classes.active}
+                onSetActive={() => setActivedHandler(i)}
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-20}
+                className="min-w-fit rounded-full border-[1px] border-black px-5 py-2 uppercase hover:bg-[#f5d577] hover:text-[#2b2c2c] lg:py-2"
+                to={item.address}
+              >
+                {item.name}
+              </LinkScroll>
+            ))}
+          </div>
         </div>
       </div>
 
