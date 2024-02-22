@@ -7,7 +7,7 @@ import Image2 from "../../../Assets/LearnOurStory/how-it-began-2.png";
 const HowItBegan = () => {
   return (
     <div className="mt-20 grid gap-10 p-10 lg:grid-cols-2">
-      <h2 className="text-center text-2xl font-bold md:text-3xl  lg:text-4xl">
+      <h2 className="text-center text-2xl font-bold md:text-3xl lg:text-4xl">
         We believe in exceptional coffee. That's why everything we do works
         towards creating massive positive change in the coffee-verse, from farm
         to cup. The result is more fair, more sustainable, more future-forward,

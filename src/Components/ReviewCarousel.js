@@ -33,7 +33,7 @@ const ProductReviewCarousel = () => {
     setCurrentSlide(currentSlide === REVIEWS.length - 1 ? 0 : currentSlide + 1);
 
   return (
-    <div className="">
+    <div>
       <div className="relative mx-auto w-3/4 overflow-hidden px-8 pb-10 lg:w-3/5">
         {/* their, Cometeer website, set this height(↓) dynamic base on current slide... i not yet know how to apply it... */}
         <div

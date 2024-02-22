@@ -1,10 +1,14 @@
 import React from "react";
-import Navbar from "../Components/Navbar";
-import Header from "../Components/LearnPages/OurStory/Header";
 
 import classes from "./LearnOurStory.module.css";
+
+import Navbar from "../Components/Navbar";
+import Header from "../Components/LearnPages/OurStory/Header";
 import HowItBegan from "../Components/LearnPages/OurStory/HowItBegan";
 import ExpInKitchen from "../Components/LearnPages/OurStory/ExpInKitchen";
+import CometeerWasBorn from "../Components/LearnPages/OurStory/CometeerWasBorn";
+import TheResult from "../Components/LearnPages/OurStory/TheResult";
+import Footer from "../Components/Footer";
 
 const LearnOurStoryPage = () => {
   return (
@@ -13,6 +17,9 @@ const LearnOurStoryPage = () => {
       <Header />
       <HowItBegan />
       <ExpInKitchen />
+      <CometeerWasBorn />
+      <TheResult />
+      <Footer />
     </div>
   );
 };

@@ -13,7 +13,7 @@ const ExpInKitchen = () => {
         </BackgroundScrollThrough>
       </div>
 
-      <div className="absolute inset-0 top-0 z-0 flex items-center gap-16 px-32 py-20">
+      <div className="absolute inset-0 top-0 z-0 flex flex-col-reverse items-center gap-16 px-8 py-20 lg:flex-row lg:px-32">
         <img
           src={ExperimentInKitchen}
           alt="experimenting in kitchen"
