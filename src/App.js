@@ -34,22 +34,22 @@ const router = createBrowserRouter([
         element: <RoastersRootLayout />,
         children: [{ path: ":roasterId", element: <RoasterDetailPage /> }],
       },
+    ],
+  },
+  {
+    path: "/pages",
+    children: [
       {
-        path: "pages",
-        children: [
-          {
-            path: "our-story",
-            element: <LearnOurStoryPage />,
-          },
-          {
-            path: "how-it-works",
-            element: <LearnHowItWorksPage />,
-          },
-          {
-            path: "sustainability",
-            element: <LearnSustainabilityPage />,
-          },
-        ],
+        path: "our-story",
+        element: <LearnOurStoryPage />,
+      },
+      {
+        path: "how-it-works",
+        element: <LearnHowItWorksPage />,
+      },
+      {
+        path: "sustainability",
+        element: <LearnSustainabilityPage />,
       },
     ],
   },

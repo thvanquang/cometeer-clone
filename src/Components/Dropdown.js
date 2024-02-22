@@ -132,7 +132,7 @@ const Dropdown = ({
                 onMouseEnter={() => {
                   mouseEnterHandler(section.id);
                 }}
-                className={`rounded-full px-5 py-2 text-xl ${sectionSelected === section.id ? "bg-[#2b2c2c] text-white" : ""}`}
+                className={`w-fit rounded-full px-4 py-3 text-start text-xl leading-[110%] ${sectionSelected === section.id ? "bg-[#2b2c2c] text-white" : ""}`}
               >
                 {section.section}
               </button>
@@ -150,7 +150,7 @@ const Dropdown = ({
                     key={item.title}
                     to={item.urlAddress}
                     onClick={clickHandler}
-                    className="flex h-[140px] w-[410px] items-center gap-4 rounded-lg border-[1px] border-[#c1bdb0] bg-[#e3dcc2] p-4 hover:border-2 hover:border-[#1a1a1a]"
+                    className="flex h-[140px] w-[410px] max-w-full items-center gap-4 rounded-lg border-[1px] border-[#c1bdb0] bg-[#e3dcc2] p-4 hover:border-2 hover:border-[#1a1a1a]"
                   >
                     <div className="flex aspect-square w-[100px] items-center">
                       <img

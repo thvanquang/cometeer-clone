@@ -1,0 +1,16 @@
+.background {
+  background-color: #f7f0d3;
+  background-image: repeating-linear-gradient(
+      90deg,
+      #e1dbc1 0,
+      #e1dbc1 1px,
+      transparent 1px,
+      transparent 6rem
+    ),
+    repeating-linear-gradient(
+      #e1dbc1 0,
+      #e1dbc1 1px,
+      transparent 1px,
+      transparent 4rem
+    );
+}

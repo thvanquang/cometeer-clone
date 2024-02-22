@@ -8,7 +8,7 @@ import LogoWhite from "../Assets/Navbar/logo-white.png";
 import MobileMenuNavbar from "./MobileMenuNavbar";
 import Dropdown from "./Dropdown";
 
-const Navbar = ({ navbarWhite }) => {
+const Navbar = ({ backgroundTransparentAtTop, textWhiteAtTop }) => {
   //// Initialize States
   // Scrolling
   const [isTop, setIsTop] = useState(true);
@@ -64,8 +64,23 @@ const Navbar = ({ navbarWhite }) => {
     setMenuOpening(!menuOpening);
     setIsScrollingUp(true);
   };
+
+  //// Logo Color
+  let logoColor;
+  // Normal case:
+  logoColor = isTop ? Logo : LogoWhite;
+  // Custom case:
+  if (textWhiteAtTop) {
+    logoColor = LogoWhite;
+    if (menuOpening) {
+      logoColor = isTop ? Logo : LogoWhite;
+    }
+  }
+
   return (
-    <div className="relative h-navbar bg-white">
+    <div
+      className={`relative ${backgroundTransparentAtTop ? "" : "h-navbar bg-white"} `}
+    >
       <div
         className={`easy-out fixed left-[50%] z-20 w-[97%] translate-x-[-50%] transition-transform duration-500 ${isTop || isScrollingUp ? "top-[1rem]" : "translate-y-[-100px]"} `}
       >
@@ -81,7 +96,7 @@ const Navbar = ({ navbarWhite }) => {
               <button
                 onMouseEnter={() => setTryCometeerShowing(true)}
                 onMouseLeave={() => setTryCometeerShowing(false)}
-                className={`easy-in-out z-20 flex items-center gap-2 rounded-full border-[1px] border-transparent px-6 py-[2px]  transition-colors duration-500   ${isTop ? "bg-[#2c2b2b] text-white hover:border-[#a0a0a0] hover:bg-[#f3f5e8] hover:text-[#2c2b2b]" : "bg-white text-[#2c2b2b] hover:border-white hover:bg-[#2c2b2b] hover:text-white"}`}
+                className={`easy-in-out z-20 flex items-center gap-2 rounded-full border-[1px] border-transparent px-6 py-[2px]  transition-colors duration-500   ${!textWhiteAtTop && isTop ? "bg-[#2c2b2b] text-white hover:border-[#a0a0a0] hover:bg-[#f3f5e8] hover:text-[#2c2b2b]" : "bg-white text-[#2c2b2b] hover:border-white hover:bg-[#2c2b2b] hover:text-white"}`}
               >
                 <p className="text-lg font-semibold">Try Cometeer</p>
                 <i className={`${tryCometeerShowing ? "rotate-180" : ""}`}>
@@ -100,7 +115,7 @@ const Navbar = ({ navbarWhite }) => {
               <button
                 onMouseEnter={() => setLearnShowing(true)}
                 onMouseLeave={() => setLearnShowing(false)}
-                className={`z-20 flex items-center gap-2 rounded-full border-[1px] border-transparent px-6 py-[2px] transition-colors duration-500 ease-in-out ${isTop ? "hover:border-[#a0a0a0] hover:bg-[#f3f5e8]" : "text-white hover:border-white hover:bg-[#2c2b2b]"}`}
+                className={`z-20 flex items-center gap-2 rounded-full border-[1px] border-transparent px-6 py-[2px] transition-colors duration-500 ease-in-out ${!textWhiteAtTop && isTop ? "hover:border-[#a0a0a0] hover:bg-[#f3f5e8]" : "text-white hover:border-white hover:bg-[#2c2b2b]"}`}
               >
                 <p className="text-lg font-semibold"> Learn</p>
                 <i className={`${learnShowing ? "rotate-180" : ""}`}>
@@ -120,16 +135,16 @@ const Navbar = ({ navbarWhite }) => {
             {/* Mobile screen */}
             <button
               onClick={menuIconClickHandler}
-              className={`ml-2 flex items-center lg:hidden ${menuOpening && "cursor-default"} ${isTop ? (menuOpening ? "text-white" : "text-[#2c2b2b]") : menuOpening ? "text-[#2c2b2b]" : "text-white"}`}
+              className={`ml-2 flex items-center lg:hidden ${menuOpening && "cursor-default"} ${isTop ? (menuOpening ? "text-white" : "text-[#2c2b2b]") : menuOpening ? "text-[#2c2b2b]" : "text-white"}
+              ${textWhiteAtTop && isTop && "text-white"}`}
             >
               {bar}
             </button>
           </div>
 
-          {/* put a link !!! */}
           <Link to="/" className="z-20">
             <img
-              src={isTop ? Logo : LogoWhite}
+              src={logoColor}
               alt="logo"
               width="182"
               height="40"
@@ -140,11 +155,11 @@ const Navbar = ({ navbarWhite }) => {
           <div className="content-center justify-self-end ">
             {!menuOpening && (
               <div
-                className={`flex gap-6 ${isTop ? "text-[#2c2b2b]" : "text-white"}`}
+                className={`flex gap-6 ${!textWhiteAtTop && isTop ? "text-[#2c2b2b]" : "text-white"}`}
               >
                 <Link
                   to="/products/gift-card"
-                  className={`relative hidden pr-1 font-semibold after:absolute after:bottom-[-5px] after:left-0 after:h-[1px] after:w-0 after:transition-all  after:duration-300 after:ease-in-out hover:after:w-full lg:block ${isTop ? "after:bg-[#2b2c2c]" : "after:bg-white"}`}
+                  className={`relative hidden pr-1 font-semibold after:absolute after:bottom-[-5px] after:left-0 after:h-[1px] after:w-0 after:transition-all  after:duration-300 after:ease-in-out hover:after:w-full lg:block ${!textWhiteAtTop && isTop ? "after:bg-[#2b2c2c]" : "after:bg-white"}`}
                 >
                   Give a Gift
                 </Link>
