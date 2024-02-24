@@ -1,13 +1,15 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
+import Header from "../Components/LearnPages/HowItWork/Header";
+import ProductInReality from "../Components/LearnPages/HowItWork/ProductInReality";
 
 const LearnHowItWorksPage = () => {
   return (
     <div>
       <Navbar backgroundTransparentAtTop={true} textWhiteAtTop={false} />
-      <div className="h-screen">2</div>
-      <div className="h-screen">3</div>
-      <div className="h-screen">4</div>
+      <Header />
+
+      <ProductInReality />
     </div>
   );
 };
