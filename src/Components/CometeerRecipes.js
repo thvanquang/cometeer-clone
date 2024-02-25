@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Element } from "react-scroll";
 
-import { playButton } from "../Assets/icons/icons";
 import { arrow } from "../Assets/icons/icons";
 
 import IcedCoffee from "../Assets/ProductCometeerRecipes/iced-coffee.mp4";
@@ -14,6 +13,7 @@ import HotLatte from "../Assets/ProductCometeerRecipes/hot-latte.mp4";
 import HotLattePoster from "../Assets/ProductCometeerRecipes/poster-hot-latte.png";
 import Affogato from "../Assets/ProductCometeerRecipes/affogato.mp4";
 import AffogatoPoster from "../Assets/ProductCometeerRecipes/poster-affogato.png";
+import Video from "../Utilities/Video";
 
 const RECIPES = [
   {
@@ -127,23 +127,13 @@ const ProductCometeerRecipes = () => {
               onClick={() => videoClickHandler(i)}
               className="group relative w-full overflow-hidden"
             >
-              <video
-                ref={videoRefs[i]}
-                controls={videoPlay[i]}
-                playsInline={true}
-                preload="none"
-                loop="loop"
+              <Video
+                videoRef={videoRefs[i]}
+                videoPlay={videoPlay[i]}
+                source={recipe.video}
                 poster={recipe.poster}
-                className="aspect-square w-full rounded-2xl object-cover"
-              >
-                <source src={recipe.video} type="video/mp4"></source>
-              </video>
-
-              <button
-                className={`absolute bottom-8 right-8 scale-[2.3] ${videoPlay[i] && "hidden"}`}
-              >
-                {playButton}
-              </button>
+                videoStyle={"aspect-square w-full"}
+              />
             </div>
 
             <h3 className="text-2xl font-bold">{recipe.title}</h3>
