@@ -1,0 +1,37 @@
+.specificDrinksBg {
+  background-color: #2b2c2c;
+  padding: 2rem;
+  background-image: repeating-linear-gradient(
+      90deg,
+      #413f3d 0,
+      #413f3d 1px,
+      transparent 1px,
+      transparent 4rem
+    ),
+    repeating-linear-gradient(
+      #413f3d 0,
+      #413f3d 1px,
+      transparent 1px,
+      transparent 4rem
+    );
+}
+
+.specificDrinksIngredientsBg {
+  background-color: #f3f5e8;
+  background-image: repeating-linear-gradient(
+      90deg,
+      #e1dbc1 0,
+      #e1dbc1 1px,
+      transparent 1px,
+      transparent 6rem
+    ),
+    repeating-linear-gradient(
+      #e1dbc1 0,
+      #e1dbc1 1px,
+      transparent 1px,
+      transparent 4rem
+    );
+  color: #2b2c2c;
+  padding: 3rem 2rem;
+  border-radius: 0.75rem;
+}
