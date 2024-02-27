@@ -62,7 +62,7 @@ const ProductCometeerRecipes = () => {
 
   // create new array fill with false value
   const initialArray = Array.from({ length: RECIPES.length }, () => false);
-  const [videoPlay, letVideoPlay] = useState(initialArray);
+  const [videoPlay, setVideoPlay] = useState(initialArray);
 
   const videoRef0 = useRef(null);
   const videoRef1 = useRef(null);
@@ -80,7 +80,7 @@ const ProductCometeerRecipes = () => {
       }
     });
 
-    letVideoPlay(clickVideo);
+    setVideoPlay(clickVideo);
     videoRefs[i].current.play();
   };
 

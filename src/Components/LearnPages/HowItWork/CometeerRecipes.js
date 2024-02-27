@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import classes from "./CometeerRecipe.module.css";
 import Video from "../../../Utilities/Video";
@@ -81,12 +81,47 @@ const CometeerRecipes = () => {
     (section) => section.section === sectionSelected,
   );
 
+  const initialArray = Array.from(
+    { length: recipesSelected.recipes.length },
+    () => false,
+  );
+  const [specVideoPlay, setSpecVideoPlay] = useState(false);
+  const [videoPlay, setVideoPlay] = useState(initialArray);
+
   //!!! i try to create a utility components slider: update later
   const totalItemsInViewport = Math.floor(100 / 27);
   // 27 is width of one item
   const totalSlide = Math.floor(
     recipesSelected.recipes.length / totalItemsInViewport,
   );
+
+  const specificDrinkVideoRef = useRef(null);
+  const videoRef0 = useRef(null);
+  const videoRef1 = useRef(null);
+  const videoRef2 = useRef(null);
+  const videoRef3 = useRef(null);
+  const videoRefs = [videoRef0, videoRef1, videoRef2, videoRef3];
+
+  const specificDrinkVideoClickHandler = () => {
+    if (specVideoPlay) {
+      return;
+    }
+
+    setSpecVideoPlay(true);
+    specificDrinkVideoRef.current.play();
+  };
+  const videoClickHandler = (i) => {
+    const clickVideo = videoPlay.map((vid, j) => {
+      if (i === j) {
+        return true;
+      } else {
+        return vid;
+      }
+    });
+
+    setVideoPlay(clickVideo);
+    videoRefs[i].current.play();
+  };
 
   const prevSlide = () => {
     return setCurrentSlide(currentSlide === 0 ? 0 : currentSlide - 1);
@@ -107,15 +142,19 @@ const CometeerRecipes = () => {
             Here are some how-to’s of specific drinks.
           </h2>
 
-          <div className="mt-16 gap-12 md:flex">
-            <div>
+          <div className="mt-16 md:flex md:gap-8 lg:gap-12">
+            <div onClick={specificDrinkVideoClickHandler}>
               <Video
+                videoRef={specificDrinkVideoRef}
+                videoPlay={specVideoPlay}
                 source={SpecificDrinksVid}
                 poster={SpecificDrinksPoster}
-                videoStyle={"aspect-square md:w-[45vw] max-h-[28rem]"}
+                videoStyle={
+                  "lg:aspect-[4/3] md:min-h-[50vw] lg:min-h-full w-full md:w-[45vw]"
+                }
               />
             </div>
-            <div>
+            <div className="mt-8 md:mt-0">
               <div className="space-y-4 text-white">
                 <div>
                   <span className="text-xs uppercase">Featured recipe</span>
@@ -149,6 +188,7 @@ const CometeerRecipes = () => {
               onClick={() => {
                 setSectionSelected(section.section);
                 setCurrentSlide(0);
+                setVideoPlay(initialArray);
               }}
               className={`rounded-full border border-white px-6 py-3 ${sectionSelected === section.section ? "bg-white text-[#2b2c2c]" : "bg-transparent text-white"}`}
             >
@@ -159,7 +199,7 @@ const CometeerRecipes = () => {
 
         <div>
           <div
-            className="flex  transition-transform duration-500 ease-in-out"
+            className="flex gap-4 transition-transform duration-500 ease-in-out"
             style={{
               transform: `translateX(-${currentSlide * 27}%)`,
             }}
@@ -167,15 +207,15 @@ const CometeerRecipes = () => {
             {recipesSelected.recipes.map((recipe, i) => (
               <div
                 key={recipe.title}
-                className="mt-10 w-[27vw] space-y-2 px-10 lg:mr-10 lg:min-w-[27vw] lg:px-0"
+                className="mt-10 w-[27vw] min-w-[27vw] space-y-2 lg:mr-10 lg:px-0"
               >
                 <div
-                  // onClick={() => videoClickHandler(i)}
+                  onClick={() => videoClickHandler(i)}
                   className="group relative w-full overflow-hidden"
                 >
                   <Video
-                    // videoRef={videoRefs[i]}
-                    // videoPlay={videoPlay[i]}
+                    videoRef={videoRefs[i]}
+                    videoPlay={videoPlay[i]}
                     source={recipe.video}
                     poster={recipe.poster}
                     videoStyle={"aspect-square w-full"}
@@ -202,7 +242,7 @@ const CometeerRecipes = () => {
               <div className="relative left-0 right-0 w-full">
                 <div className="flex h-[2px] w-full items-center bg-[#fff] opacity-10"></div>
                 <div
-                  className="absolute -top-[25%] hidden h-[3px] w-[81%] bg-[#fff] transition-transform duration-300 ease-in lg:block"
+                  className="absolute -top-[25%] h-[3px] w-[81%] bg-[#fff] transition-transform duration-300 ease-in"
                   style={{
                     transform: `translateX(${currentSlide * 23.45}%)`,
                     // this is still hardcode FIXME

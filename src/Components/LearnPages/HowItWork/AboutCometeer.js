@@ -9,7 +9,7 @@ import HIWCarousel2 from "../../../Assets/LearnHowItWorks/how-it-works-2.png";
 import { arrow } from "../../../Assets/icons/icons";
 
 const AboutCometeer = () => {
-  const [videoPlay, letVideoPlay] = useState(false);
+  const [videoPlay, setVideoPlay] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const videoRef = useRef(null);
@@ -18,7 +18,7 @@ const AboutCometeer = () => {
       return;
     }
 
-    letVideoPlay(true);
+    setVideoPlay(true);
     videoRef.current.play();
   };
 
@@ -62,10 +62,11 @@ const AboutCometeer = () => {
           <div
             className="flex gap-8 transition-transform duration-500 ease-in-out"
             style={{
-              transform: `translateX(-${currentSlide !== totalSlide ? currentSlide * 34 : currentSlide * 33}vw)`,
+              transform: `translateX(-${currentSlide !== totalSlide ? currentSlide * 35 : currentSlide * 33}vw)`,
             }}
+            // only work on min-width 1024px !!! FIXME
           >
-            <div className="relative aspect-square min-w-[35vw] overflow-hidden rounded-xl">
+            <div className="relative aspect-square min-w-[70vw] overflow-hidden rounded-xl md:min-w-[50vw] lg:min-w-[35vw]">
               <img
                 src={HIWCarousel0}
                 alt="how it works"
@@ -79,7 +80,7 @@ const AboutCometeer = () => {
               </div>
             </div>
 
-            <div className="flex aspect-square min-w-[35vw] items-end rounded-xl bg-[#2c2b2b]">
+            <div className="flex aspect-square min-w-[70vw] items-end rounded-xl bg-[#2c2b2b] md:min-w-[50vw] lg:min-w-[35vw]">
               <h3 className="p-12 text-lg text-white md:text-xl lg:text-2xl">
                 Defrost overnight, hot water dip, or no defrost – your choice!
                 Peel the lid and enjoy the magic of a great coffee cup! Your
@@ -87,7 +88,7 @@ const AboutCometeer = () => {
               </h3>
             </div>
 
-            <div className="relative aspect-square min-w-[35vw] overflow-hidden rounded-xl">
+            <div className="relative aspect-square min-w-[70vw] overflow-hidden rounded-xl md:min-w-[50vw] lg:min-w-[35vw]">
               <img
                 src={HIWCarousel1}
                 alt="how it works"
@@ -101,7 +102,7 @@ const AboutCometeer = () => {
               </div>
             </div>
 
-            <div className="flex aspect-square min-w-[35vw] items-end rounded-xl bg-[#2c2b2b] ">
+            <div className="flex aspect-square min-w-[70vw] items-end rounded-xl bg-[#2c2b2b] md:min-w-[50vw] lg:min-w-[35vw] ">
               <h3 className="p-12 text-lg text-white md:text-xl lg:text-2xl">
                 Combine the frozen puck with 6-8 oz of hot water or milk for a
                 cozy, hot brew. Feeling cool? Try pouring the defrosted capsule
@@ -110,7 +111,7 @@ const AboutCometeer = () => {
               </h3>
             </div>
 
-            <div className="relative aspect-square min-w-[35vw] overflow-hidden rounded-xl">
+            <div className="relative aspect-square min-w-[70vw] overflow-hidden rounded-xl md:min-w-[50vw] lg:min-w-[35vw]">
               <img
                 src={HIWCarousel2}
                 alt="how it works"
@@ -123,7 +124,7 @@ const AboutCometeer = () => {
               </div>
             </div>
 
-            <div className="flex aspect-square min-w-[35vw] items-end rounded-xl bg-[#2c2b2b]">
+            <div className="flex aspect-square min-w-[70vw] items-end rounded-xl bg-[#2c2b2b] md:min-w-[50vw] lg:min-w-[35vw]">
               <h3 className="p-12 text-lg text-white md:text-xl lg:text-2xl">
                 Cometeer capsules taste amazing even up to 24 hours after
                 thawing. Plus, they are TSA-approved, so you can easily take
@@ -146,7 +147,7 @@ const AboutCometeer = () => {
             <div className="flex h-[2px] w-full items-center bg-[#2b2c2c] opacity-10"></div>
 
             <div
-              className="absolute -top-[25%] hidden h-[3px] w-[42%] bg-[#2b2c2c] transition-transform duration-300 ease-in lg:block"
+              className="absolute -top-[25%] h-[3px] w-[42%] bg-[#2b2c2c] transition-transform duration-300 ease-in"
               style={{
                 transform: `translateX(${currentSlide !== totalSlide ? currentSlide * 40 : (currentSlide - 1) * 40 + 18.1}%)`,
               }}
