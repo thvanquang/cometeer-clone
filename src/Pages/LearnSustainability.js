@@ -13,7 +13,7 @@ import ProductSustainability from "../Components/LearnPages/Sustainability/Produ
 const LearnSustainabilityPage = () => {
   return (
     <div className={classes.background}>
-      <Navbar />
+      <Navbar backgroundTransparentAtTop={true} textWhiteAtTop={true} />
       <Header />
       <div>
         <h2 className="text-center text-2xl font-bold md:text-3xl lg:text-4xl">

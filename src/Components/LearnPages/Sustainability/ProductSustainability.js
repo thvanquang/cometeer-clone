@@ -55,9 +55,9 @@ const ProductSustainability = () => {
         </div>
       </div>
 
-      <div className="mt-20 rounded-2xl bg-[#f5d577] px-24 py-20">
-        <div className="flex gap-12">
-          <div className="w-[60%]">
+      <div className="mt-20 rounded-2xl bg-[#f5d577] px-8 py-20 xl:px-24">
+        <div className="items-center gap-12 md:flex">
+          <div className="w-full lg:w-[60%]">
             <h2 className="text-xl font-bold md:text-2xl lg:text-3xl">
               Once you've prepared your Cometeer, remember recycling.
             </h2>
@@ -69,7 +69,7 @@ const ProductSustainability = () => {
             <img src={Recycling0} alt="recycling" />
           </div>
 
-          <div>
+          <div className="mt-10 md:mt-0">
             <img
               src={Recycling1}
               alt="recycling"
