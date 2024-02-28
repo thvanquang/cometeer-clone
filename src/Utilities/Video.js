@@ -4,7 +4,7 @@ import { playButton } from "../Assets/icons/icons.js";
 
 const Video = ({ videoRef, videoPlay, source, poster, videoStyle }) => {
   return (
-    <div className="relative">
+    <div className={`relative ${videoStyle}`}>
       <video
         ref={videoRef}
         controls={videoPlay}
@@ -12,7 +12,7 @@ const Video = ({ videoRef, videoPlay, source, poster, videoStyle }) => {
         preload="none"
         loop="loop"
         poster={poster}
-        className={`rounded-2xl object-cover ${videoStyle}`}
+        className={`h-full w-full rounded-2xl object-cover`}
       >
         <source src={source} type="video/mp4"></source>
       </video>
