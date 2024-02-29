@@ -8,8 +8,8 @@ import Recycling1 from "../../../Assets/LearnSustainability/Recycling1.png";
 const ProductSustainability = () => {
   return (
     <div className="p-8">
-      <div className="px-24">
-        <div className="flex items-center gap-14">
+      <div className="lg:px-24">
+        <div className="flex flex-col items-center gap-14 md:flex-row">
           <div className="w-full">
             <h1 className="w-[60%] text-2xl font-bold md:text-3xl lg:text-5xl">
               Coffee That Stays Fresh
@@ -30,7 +30,7 @@ const ProductSustainability = () => {
             className="aspect-square w-full rounded-2xl object-cover"
           />
         </div>
-        <div className="mt-20 flex items-center gap-14">
+        <div className="mt-20 flex flex-col-reverse items-center gap-14 md:flex-row">
           <img
             src={PlanetFriendly}
             alt="fresh-coffee"
